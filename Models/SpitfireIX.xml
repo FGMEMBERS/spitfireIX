@@ -193,6 +193,7 @@
   <model> 
    <path>Aircraft/spitfireIX/Models/pdisk.xml</path>
    <name>pdisk</name>
+		<nopreview/>
     <offsets> 
    <x-m>0.83</x-m>
    <y-m>0.0</y-m>
@@ -569,6 +570,7 @@
   <model> 
    <path>Aircraft/spitfireIX/Models/pilot.xml</path>
    <name>pilot</name>
+		<nopreview/>
     <offsets> 
      <x-m>4.4</x-m>
      <y-m>0.0</y-m>
