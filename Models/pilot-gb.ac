@@ -2738,7 +2738,7 @@ refs 4
 58 0.128925517201 0.0689985156059
 kids 0
 OBJECT poly
-name "foot.L.001"
+name "foot.R"
 data 8
 Cube.035
 texture "pilot-gb.rgb"
