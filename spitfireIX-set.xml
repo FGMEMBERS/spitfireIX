@@ -12,7 +12,7 @@ October 2007 Detlef Faber
  <sim>
   <description>Supermarine Spitfire Mk IX</description>
   <author>Detlef Faber</author>
-  
+  <status>beta</status>  
   <flight-model>yasim</flight-model>
   <aero>spit9-yasim</aero>
   <fuel-fraction>1.0</fuel-fraction>
