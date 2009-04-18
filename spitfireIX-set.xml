@@ -47,8 +47,63 @@ October 2007 Detlef Faber
         <visible>1.0</visible>
       </pilot>
    </crew>
-  </model> 
-
+		<livery>
+		 <letter_color>
+		  <diffuse>
+		   <red>1.0</red>
+		   <green>1.0</green>
+		   <blue>1.0</blue>
+		  </diffuse>
+		  <ambient>
+		   <red>1.0</red>
+		   <green>1.0</green>
+		   <blue>1.0</blue>
+		  </ambient>
+		  <specular>
+		   <red>1.0</red>
+		   <green>1.0</green>
+		   <blue>1.0</blue>
+		  </specular>
+	  <emission>
+		   <red>0.0</red>
+		   <green>0.0</green>
+		   <blue>0.0</blue>
+		  </emission>
+		  <transparency>
+		   <alpha>1.0</alpha>
+		  </transparency>
+		  <shininess>1</shininess>
+		 </letter_color>
+	
+		 <prophub_color>
+		  <diffuse>
+		   <red>0.4</red>
+		   <green>0.0</green>
+		   <blue>0.0</blue>
+		  </diffuse>
+		  <ambient>
+		   <red>0.4</red>
+		   <green>0.0</green>
+		   <blue>0.0</blue>
+		  </ambient>
+		  <specular>
+		   <red>0.4</red>
+		   <green>0.0</green>
+		   <blue>0.0</blue>
+		  </specular>
+		  <emission>
+		   <red>0.0</red>
+		   <green>0.0</green>
+		   <blue>0.0</blue>
+		  </emission>
+		  <transparency>
+	   <alpha>1.0</alpha>
+		  </transparency>	
+		  <shininess>2</shininess>
+		 </prophub_color>
+		</livery>
+	  </model> 
+	
   <view n="0">
    <internal archive="y">true</internal>
    <config>
@@ -61,35 +116,40 @@ October 2007 Detlef Faber
 
   <view n="1">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
 
   <view n="2">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
 
   <view n="3">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
 
   <view n="4">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
   <view n="5">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
   <view n="6">
    <config>
-    <target-z-offset-m archive="y" type="double">3.349</target-z-offset-m>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
+   </config>
+  </view>
+  <view n="7">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
 
@@ -109,8 +169,47 @@ October 2007 Detlef Faber
   <hud>
    <enable3d>false</enable3d>
   </hud>  
-
- </sim>
+	<menubar>
+		<default>
+			<menu n="10">
+				<label>SpitfireIX</label>
+					<enabled type="bool">true</enabled>
+<!--
+					<item>
+						<label>Magically start engine</label>
+						<binding>
+							<command>nasal</command>
+							<script>f4u.magicstart();</script>
+						</binding>
+					</item>
+-->
+					<item>
+						<label>Select Livery</label>
+              <binding>
+                <command>nasal</command>
+                <script>aircraft.livery.dialog.toggle()</script>
+              </binding>
+					</item>
+<!--
+					<item>
+						<label>Select Logo</label>
+              <binding>
+                <command>nasal</command>
+                <script>f4u.logo_dialog.toggle()</script>
+              </binding>
+					</item>
+-->
+      <item>
+        <label>Registration</label>
+        <binding>
+          <command>nasal</command>
+          <script>immat.immat_dialog.toggle()</script>
+        </binding>
+      </item>
+			</menu>
+		</default>
+	</menubar>
+</sim>
 
  <engines>
   <engine>
@@ -121,28 +220,21 @@ October 2007 Detlef Faber
   </engine>
  </engines>
 
- <consumables>
-  <fuel>
-   <tank n="0">
-    <level-gal_us>20</level-gal_us>
-   </tank>
-   <tank n="1">
-    <level-gal_us>20</level-gal_us>
-   </tank>
-  </fuel>
- </consumables>
-
 
  <!-- set up control properties for YASim -->
  <controls>
    <engines>
       <engine n="0">
         <magnetos>3</magnetos>
-        <boost type="double">0.33</boost>
+        <boost type="double">0.45</boost>
+				<blower type="int">0</blower>
       </engine>
    </engines>
+	 <flight>
+			<aileron-effectiveness type ="double">0.1</aileron-effectiveness>
+	 </flight>
    <gear>
-      <tailwheel-lock>false</tailwheel-lock>
+      <tailwheel-lock>true</tailwheel-lock>
    </gear>
    <canopy>
       <canopy-pos-norm type="float">1.0</canopy-pos-norm>
@@ -160,8 +252,11 @@ October 2007 Detlef Faber
   <nasal>
 
     <spit9>
-      <file>Aircraft/spitfireIX/spit9.nas</file>
+      <file>Aircraft/spitfireIX/Nasal/spit9.nas</file>
     </spit9>
+   <immat>
+     <file>Aircraft/beaufighter/Nasal/immat.nas</file>
+   </immat>
   </nasal>
 
 </PropertyList>

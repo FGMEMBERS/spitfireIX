@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">USSR</name>
+
+            <texture>Liveries/spit9-1a.png</texture>
+						<nation>Liveries/ussr.png</nation>
+						<tail>Liveries/none.png</tail>
+						<lwingU>Liveries/none.png</lwingU>
+						<lwingD>Liveries/ussr.png</lwingD>
+						<rwingU>Liveries/none.png</rwingU>
+						<rwingD>Liveries/ussr.png</rwingD>
+	 <letter_color>
+	  <diffuse>
+	   <red>1.0</red>
+	   <green>1.0</green>
+	   <blue>1.0</blue>
+	  </diffuse>
+
+	  <ambient>
+	   <red>1.0</red>
+	   <green>1.0</green>
+	   <blue>1.0</blue>
+	  </ambient>
+
+	  <specular>
+	   <red>1.0</red>
+	   <green>1.0</green>
+	   <blue>1.0</blue>
+	  </specular>
+
+	  <emission>
+	   <red>0.0</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </emission>
+
+	  <transparency>
+	   <alpha>1.0</alpha>
+	  </transparency>
+
+	  <shininess>1</shininess>
+	 </letter_color>
+
+	 <prophub_color>
+	  <diffuse>
+	   <red>0.4</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </diffuse>
+
+	  <ambient>
+	   <red>0.4</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </ambient>
+
+	  <specular>
+	   <red>0.4</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </specular>
+
+	  <emission>
+	   <red>0.0</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </emission>
+
+	  <transparency>
+	   <alpha>1.0</alpha>
+	  </transparency>
+
+	  <shininess>0</shininess>
+	 </prophub_color>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

@@ -7,7 +7,7 @@ OBJECT poly
 name "noshadow.fpdisk"
 data 10
 Circle.099
-texture "fastpdisk.rgb"
+texture "fastpdisk.png"
 texrep 1 1
 crease 30.000000
 numvert 34
@@ -435,7 +435,7 @@ OBJECT poly
 name "noshadow.spdisk"
 data 10
 Circle.082
-texture "slowpdisk.rgb"
+texture "slowpdisk.png"
 texrep 1 1
 crease 30.000000
 numvert 34

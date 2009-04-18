@@ -3,8 +3,17 @@
 <!-- Supermarine Spitfire Mk IX by Detlef Faber -->
 
 <PropertyList>
-
- <path>spitfire9.ac</path>
+  <model> 
+   <path>Aircraft/spitfireIX/Models/pdisk.xml</path>
+   <name>pdisk</name>
+		<nopreview/>
+    <offsets> 
+   <x-m>0.83</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.127</z-m>
+    </offsets>
+  </model>
+ <path>spitfirelf9.ac</path>
 
   <nasal>
     <load>
@@ -74,16 +83,7 @@
    <z>0.0</z>
   </axis>
  </animation>
-  <model> 
-   <path>Aircraft/spitfireIX/Models/pdisk.xml</path>
-   <name>pdisk</name>
-		<nopreview/>
-    <offsets> 
-   <x-m>0.83</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.127</z-m>
-    </offsets>
-  </model>
+
  <animation>
   <type>spin</type>
   <object-name>prop</object-name>
@@ -171,129 +171,48 @@
   <type>rotate</type>
   <object-name>flap1.L</object-name>
   <property>surface-positions/flap-pos-norm</property>
-  <factor>-80.0</factor>
+  <factor>-50.0</factor>
 
   <center>
-   <x-m>4.504</x-m>
-   <y-m>-1.776</y-m>
-   <z-m>-0.521</z-m>
+   <x-m>4.29</x-m>
+   <y-m>-0.94</y-m>
+   <z-m>-0.656</z-m>
   </center>
 
   <axis>
-   <x1-m>4.626</x1-m>
-   <y1-m>-0.763</y1-m>
-   <z1-m>-0.632</z1-m>
-   <x2-m>4.383</x2-m>
-   <y2-m>-2.788</y2-m>
-   <z2-m>-0.411</z2-m>
+   <x1-m>4.409</x1-m>
+   <y1-m>-0.513</y1-m>
+   <z1-m>-0.444</z1-m>
+   <x2-m>4.397</x2-m>
+   <y2-m>-1.571</y2-m>
+   <z2-m>-0.844</z2-m>
   </axis>
  </animation>
- <animation>
-  <type>rotate</type>
-  <object-name>flap2.L</object-name>
-  <property>surface-positions/flap-pos-norm</property>
-  <factor>-80.0</factor>
 
-  <center>
-   <x-m>4.654</x-m>
-   <y-m>-0.528</y-m>
-   <z-m>-0.625</z-m>
-  </center>
 
-  <axis>
-   <x1-m>4.683</x1-m>
-   <y1-m>-0.292</y1-m>
-   <z1-m>-0.618</z1-m>
-   <x2-m>4.626</x2-m>
-   <y2-m>-0.763</y2-m>
-   <z2-m>-0.632</z2-m>
-  </axis>
- </animation>
  <animation>
   <type>rotate</type>
   <object-name>flap1.R</object-name>
   <property>surface-positions/flap-pos-norm</property>
-  <factor>80.0</factor>
+  <factor>50.0</factor>
 
   <center>
-   <x-m>4.504</x-m>
-   <y-m>1.776</y-m>
-   <z-m>-0.521</z-m>
+   <x-m>4.29</x-m>
+   <y-m>0.94</y-m>
+   <z-m>-0.656</z-m>
   </center>
 
   <axis>
-   <x1-m>4.626</x1-m>
-   <y1-m>0.763</y1-m>
-   <z1-m>-0.632</z1-m>
-   <x2-m>4.383</x2-m>
-   <y2-m>2.788</y2-m>
-   <z2-m>-0.411</z2-m>
-  </axis>
- </animation>
- <animation>
-  <type>rotate</type>
-  <object-name>flap2.R</object-name>
-  <property>surface-positions/flap-pos-norm</property>
-  <factor>80.0</factor>
-
-  <center>
-   <x-m>4.654</x-m>
-   <y-m>0.528</y-m>
-   <z-m>-0.625</z-m>
-  </center>
-
-  <axis>
-   <x1-m>4.683</x1-m>
-   <y1-m>0.292</y1-m>
-   <z1-m>-0.618</z1-m>
-   <x2-m>4.626</x2-m>
-   <y2-m>0.763</y2-m>
-   <z2-m>-0.632</z2-m>
+   <x1-m>4.409</x1-m>
+   <y1-m>0.513</y1-m>
+   <z1-m>-0.444</z1-m>
+   <x2-m>4.397</x2-m>
+   <y2-m>1.571</y2-m>
+   <z2-m>-0.844</z2-m>
   </axis>
  </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>coolflap.L</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
-  <factor>-60.0</factor>
 
-  <center>
-   <x-m>4.167</x-m>
-   <y-m>-0.836</y-m>
-   <z-m>-0.735</z-m>
-  </center>
-
-  <axis>
-   <x1-m>4.164</x1-m>
-   <y1-m>-0.557</y1-m>
-   <z1-m>-0.758</z1-m>
-   <x2-m>4.164</x2-m>
-   <y2-m>-1.114</y2-m>
-   <z2-m>-0.704</z2-m>
-  </axis>
- </animation>
- <animation>
-  <type>rotate</type>
-  <object-name>coolflap.R</object-name>
-  <property>controls/engines/engine[0]/cowl-flaps-norm</property>
-  <factor>60.0</factor>
-
-  <center>
-   <x-m>4.167</x-m>
-   <y-m>0.836</y-m>
-   <z-m>-0.735</z-m>
-  </center>
-
-  <axis>
-   <x1-m>4.164</x1-m>
-   <y1-m>0.557</y1-m>
-   <z1-m>-0.758</z1-m>
-   <x2-m>4.164</x2-m>
-   <y2-m>1.114</y2-m>
-   <z2-m>-0.704</z2-m>
-  </axis>
- </animation>
 
  <animation>
   <type>rotate</type>
@@ -677,4 +596,5 @@
       <z> 0 </z> 
     </axis> 
   </animation>
+
 </PropertyList>
