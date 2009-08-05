@@ -23,3 +23,5 @@ setlistener("/sim/signals/fdm-initialized",main_loop);
 aircraft.steering.init();
 
 aircraft.livery.init("Aircraft/spitfireIX/Models/Liveries", "sim/model/livery/name");
+
+var logo_dialog = gui.OverlaySelector.new("Select Logo", "Aircraft/Generic/Logos", "sim/model/logo/name", nil, "sim/multiplay/generic/string");

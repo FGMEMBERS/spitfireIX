@@ -10,7 +10,7 @@
     <load>
       var update = aircraft.overlay_update.new();
       update.add("Aircraft/spitfireIX/Models/AI-Liveries", "sim/model/livery/file");
-      # update.add("Aircraft/spitfireIX/Models/logos", "sim/multiplay/generic/string");
+      update.add("Aircraft/Generic/Logos", "sim/multiplay/generic/string");
     </load>
     <unload>
       update.stop();
@@ -485,6 +485,131 @@
    </greater-than>
   </condition>
  </animation>
+<!-- left armament -->
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
+	  <name>leftgunblaze</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>2.9</x-m>
+        <y-m>-3.735</y-m>
+        <z-m>-0.266</z-m>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>leftgunblaze</object-name>
+  <condition>
+   <equals>
+    <property>controls/armament/gun1</property>
+    <value>true</value>
+   </equals>
+  </condition>
+ </animation>
+
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
+	  <name>leftgun2blaze</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>2.9</x-m>
+        <y-m>-3.067</y-m>
+        <z-m>-0.321</z-m>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>leftgun2blaze</object-name>
+  <condition>
+   <equals>
+    <property>controls/armament/gun2</property>
+    <value>true</value>
+   </equals>
+  </condition>
+ </animation>
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
+	  <name>leftcannonblaze</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>1.5</x-m>
+        <y-m>-2.08</y-m>
+        <z-m>-0.393</z-m>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>leftcannonblaze</object-name>
+  <condition>
+   <equals>
+    <property>controls/armament/cannon1</property>
+    <value>true</value>
+   </equals>
+  </condition>
+ </animation>
+<!-- right armament -->
+
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
+	  <name>rightgunblaze</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>2.9</x-m>
+        <y-m>3.735</y-m>
+        <z-m>-0.266</z-m>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>rightgunblaze</object-name>
+  <condition>
+   <equals>
+    <property>controls/armament/gun4</property>
+    <value>true</value>
+   </equals>
+  </condition>
+ </animation>
+
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
+	  <name>rightgun2blaze</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>2.9</x-m>
+        <y-m>3.067</y-m>
+        <z-m>-0.321</z-m>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>rightgun2blaze</object-name>
+  <condition>
+   <equals>
+    <property>controls/armament/gun3</property>
+    <value>true</value>
+   </equals>
+  </condition>
+ </animation>
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
+	  <name>rightcannonblaze</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>1.5</x-m>
+        <y-m>2.08</y-m>
+        <z-m>-0.393</z-m>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>rightcannonblaze</object-name>
+  <condition>
+   <equals>
+    <property>controls/armament/cannon2</property>
+    <value>true</value>
+   </equals>
+  </condition>
+ </animation>
 
   <animation>
     <type>material</type>
@@ -565,7 +690,7 @@
 	<animation>
 		<type>material</type>
 		<object-name>prophub</object-name>
-		<property-base>/sim/model/livery/prophub_color</property-base>
+		<property-base>sim/model/livery/prophub_color</property-base>
 		<diffuse>
 			<red-prop>diffuse/red</red-prop>
 			<green-prop>diffuse/green</green-prop>
@@ -602,7 +727,7 @@
 		<object-name>sign1.R</object-name>
 		<object-name>sign2.R</object-name>
 		<object-name>sign3.R</object-name>
-		<property-base>/sim/model/livery/letter_color</property-base>
+		<property-base>sim/model/livery/letter_color</property-base>
 		<diffuse>
 			<red-prop>diffuse/red</red-prop>
 			<green-prop>diffuse/green</green-prop>
@@ -628,6 +753,13 @@
 		</transparency>
 		<shininess-prop>shininess</shininess-prop>
 	</animation>
+
+ <animation>
+    <type>material</type>
+      <object-name>logo.L</object-name>
+      <object-name>logo.R</object-name>
+        <texture-prop>sim/model/logo/texture</texture-prop>
+  </animation>
 
   <animation> 
     <type>textranslate</type> 

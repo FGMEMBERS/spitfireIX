@@ -47,7 +47,12 @@ October 2007 Detlef Faber
         <visible>1.0</visible>
       </pilot>
    </crew>
+		<logo>
+			<name>FlightGear</name>
+			<texture>../../Generic/Logos/FlightGear.png</texture>
+		</logo>
 		<livery>
+     <file/>
 		 <letter_color>
 		  <diffuse>
 		   <red>1.0</red>
@@ -190,15 +195,14 @@ October 2007 Detlef Faber
                 <script>aircraft.livery.dialog.toggle()</script>
               </binding>
 					</item>
-<!--
+
 					<item>
 						<label>Select Logo</label>
               <binding>
                 <command>nasal</command>
-                <script>f4u.logo_dialog.toggle()</script>
+                <script>spit9.logo_dialog.toggle()</script>
               </binding>
 					</item>
--->
       <item>
         <label>Registration</label>
         <binding>
@@ -209,6 +213,11 @@ October 2007 Detlef Faber
 			</menu>
 		</default>
 	</menubar>
+	<multiplay>
+		<generic>
+			<string/>
+		</generic>
+	</multiplay>
 </sim>
 
  <engines>
@@ -223,6 +232,34 @@ October 2007 Detlef Faber
 
  <!-- set up control properties for YASim -->
  <controls>
+		<armament>
+				<gun n="0">
+						<serviceable type="bool">true</serviceable>
+						<fire type="bool">false</fire>
+				</gun>
+				<gun n="1">
+						<serviceable type="bool">true</serviceable>
+						<fire type="bool">false</fire>
+				</gun>
+				<gun n="2">
+						<serviceable type="bool">true</serviceable>
+						<fire type="bool">false</fire>
+				</gun>
+				<gun n="3">
+						<serviceable type="bool">true</serviceable>
+						<fire type="bool">false</fire>
+				</gun>
+				<cannon n="0">
+						<serviceable type="bool">true</serviceable>
+						<fire type="bool">false</fire>
+				</cannon>
+				<cannon n="1">
+						<serviceable type="bool">true</serviceable>
+						<fire type="bool">false</fire>
+				</cannon>
+				<trigger type="bool">false</trigger>
+				<trigger1 type="bool">false</trigger1>
+		</armament>
    <engines>
       <engine n="0">
         <magnetos>3</magnetos>
@@ -231,6 +268,7 @@ October 2007 Detlef Faber
       </engine>
    </engines>
 	 <flight>
+			<slipstream type="double">1.0</slipstream>
 			<aileron-effectiveness type ="double">0.1</aileron-effectiveness>
 	 </flight>
    <gear>
@@ -244,7 +282,43 @@ October 2007 Detlef Faber
  <!-- Map Keys -->
  <input>
     <keyboard>
+      <key n="12"> 
+          <name>Ctrl-L</name>
+          <desc>Toggle Tailwheel Lock.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/gear/tailwheel-lock</property>
+          </binding>
+      </key>
+      <key n="101">
+        <name>e</name>
+        <desc>Fire MGs</desc>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/armament/trigger</property>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>property-toggle</command>
+            <property>controls/armament/trigger</property>
+          </binding>
+        </mod-up>
+      </key>
 
+      <key n="69">
+        <name>E</name>
+        <desc>fire Cannons</desc>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/armament/trigger1</property>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>property-toggle</command>
+            <property>controls/armament/trigger1</property>
+          </binding>
+        </mod-up>
+      </key>
      </keyboard>
  </input>
 
@@ -255,8 +329,11 @@ October 2007 Detlef Faber
       <file>Aircraft/spitfireIX/Nasal/spit9.nas</file>
     </spit9>
    <immat>
-     <file>Aircraft/beaufighter/Nasal/immat.nas</file>
+     <file>Aircraft/spitfireIX/Nasal/immat.nas</file>
    </immat>
+		<weapons>
+				<file>Aircraft/spitfireIX/Nasal/weapons.nas</file>
+		</weapons>
   </nasal>
 
 </PropertyList>
