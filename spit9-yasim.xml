@@ -110,7 +110,7 @@ YASim aerodynamic model for a Spitfire Mk IX
 -->
  <!-- left main -->
 <gear x="-2.921" y="1.0" z="-1.754" compression="0.15" spring="0.2" damp="12.3" 
-	dfric="0.55" sfric="0.5"
+	dfric="0.45" sfric="0.5"
 >
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
@@ -121,7 +121,7 @@ YASim aerodynamic model for a Spitfire Mk IX
 
  <!-- right main -->
 <gear x="-2.921" y="-1.0" z="-1.754" compression="0.15" spring="0.2" damp="12.3"
-	dfric="0.55" sfric="0.5"
+	dfric="0.45" sfric="0.5"
 >
   <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>

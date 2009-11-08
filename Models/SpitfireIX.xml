@@ -485,7 +485,7 @@
    </greater-than>
   </condition>
  </animation>
-<!-- left armament -->
+<!-- left armament 
     <model> 
       <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
 	  <name>leftgunblaze</name>
@@ -547,7 +547,8 @@
    </equals>
   </condition>
  </animation>
-<!-- right armament -->
+-->
+<!-- right armament 
 
     <model> 
       <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
@@ -610,7 +611,7 @@
    </equals>
   </condition>
  </animation>
-
+-->
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>

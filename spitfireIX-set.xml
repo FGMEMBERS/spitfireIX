@@ -331,9 +331,11 @@ October 2007 Detlef Faber
    <immat>
      <file>Aircraft/spitfireIX/Nasal/immat.nas</file>
    </immat>
+<!--
 		<weapons>
 				<file>Aircraft/spitfireIX/Nasal/weapons.nas</file>
 		</weapons>
+-->
   </nasal>
 
 </PropertyList>
