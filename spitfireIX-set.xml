@@ -48,6 +48,7 @@ October 2007 Detlef Faber
       </pilot>
    </crew>
 		<logo>
+			<display type="int" userarchive="y">2</display>
 			<name>FlightGear</name>
 			<texture>../../Generic/Logos/FlightGear.png</texture>
 		</logo>
@@ -202,6 +203,17 @@ October 2007 Detlef Faber
                 <command>nasal</command>
                 <script>spit9.logo_dialog.toggle()</script>
               </binding>
+					</item>
+					<item>
+						<label>Toggle Logo display</label>
+        <binding> 
+          <command>property-adjust</command>
+          <property>sim/model/logo/display</property>
+          <step type="int">1</step>
+          <min type="int">0</min>
+          <max type="int">3</max>
+					<wrap>1</wrap>
+        </binding>
 					</item>
       <item>
         <label>Registration</label>
