@@ -11,7 +11,7 @@ YASim aerodynamic model for a Spitfire Mk IX
 <airplane mass="5090">
 
 <!-- Approach configuration -->
-<approach speed="72" aoa="8">
+<approach speed="82" aoa="8">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
   <control-setting axis="/controls/engines/engine[0]/mixture" value="0.6"/>
   <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.1"/>
@@ -20,7 +20,7 @@ YASim aerodynamic model for a Spitfire Mk IX
 </approach>
 
 <!-- Cruise configuration -->
-<cruise speed="260" alt="22000">
+<cruise speed="230" alt="18000">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="1.00"/>
   <control-setting axis="/controls/engines/engine[0]/mixture" value="1.00"/>
   <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
@@ -49,6 +49,7 @@ YASim aerodynamic model for a Spitfire Mk IX
   <stall aoa="11" width="8" peak="2.0"/>
   <flap0 start="0.0" end="1.0" lift="1.9" drag="1.8"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
   <control-speed control="FLAP0" transition-time="5"/>
 </wing>
@@ -57,18 +58,14 @@ YASim aerodynamic model for a Spitfire Mk IX
 <mstab x="-3.584" y="2.788" z="-0.333" taper="0.66" incidence="2.0" twist="0.5" effectiveness = "1.0"
       length="1.845" chord="2.176" sweep="-4.0" dihedral="5" camber="0.05" >
   <stall aoa="11" width="11" peak="2.0"/>
-  <flap0 start="0.0" end="1.0" lift="1.53" drag="1.2"/>
+  <flap0 start="0.0" end="1.0" lift="1.7" drag="1.2"/>
   <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+  <control-input axis="/velocities/airspeed-kt" control="FLAP0"
+				src0="150" src1="400" dst0="0" dst1="2"/>
   <control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
-	<control-input axis="/controls/flight/aileron-effectiveness" control="FLAP0EFFECTIVENESS" 
-	src0="0" src1="1" dst0="0" dst1="1"/>
 </mstab>
 
-<!-- normal wingtip -->
-<mstab x="-3.441" y="4.632" z="-0.166" taper="0.2" incidence="-0.0"
-      length="0.992" chord="1.431" sweep="-7.7" dihedral="5" camber="0.1">
-  <stall aoa="12" width="8" peak="1.5"/>
-</mstab>
+
 
 <!-- elevator -->
 <hstab x="-8.785" y="0.14" z="0.414" taper="0.5" incidence="2.0"
@@ -77,6 +74,10 @@ YASim aerodynamic model for a Spitfire Mk IX
   <flap0 start="0.0" end="1.0" lift="1.8" drag="1.5"/>
   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+  <control-input axis="/velocities/airspeed-kt" control="FLAP0"
+				src0="150" src1="500" dst0="0" dst1="2"/>
+  <control-input axis="/velocities/airspeed-kt" control="FLAP0"
+				src0="150" src1="500" dst0="0" dst1="-2"/>
   <control-input axis="/controls/flight/slipstream" control="SLAT"/>
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 </hstab>

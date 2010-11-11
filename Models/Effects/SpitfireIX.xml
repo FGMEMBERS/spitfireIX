@@ -22,36 +22,10 @@
  </offsets>
 
    <effect>
- 			<inherits-from>Aircraft/spitfireIX/Models/Effects/spit9_bumpspec</inherits-from>
-  	  <object-name>fuselage</object-name>
- 			<object-name>wing.L</object-name>
-  		<object-name>wing.R</object-name>
- 			<object-name>stdtip.L</object-name>
-		  <object-name>stdtip.R</object-name>
- 			<object-name>lftip.L</object-name>
- 			<object-name>lftip.R</object-name>
- 			<object-name>exttip.L</object-name>
- 			<object-name>exttip.R</object-name>
-    <object-name>aileron.L</object-name>
-    <object-name>aileron.R</object-name>
-    <object-name>stab.L</object-name>
-    <object-name>stab.R</object-name>
-    <object-name>elevator.L</object-name>
-    <object-name>elevator.R</object-name>
-    <object-name>cockpitdoor</object-name>
-    <object-name>canopyframe</object-name>
-    <object-name>frontcanopy</object-name>
-    <object-name>mast</object-name>
-    <object-name>rudder</object-name>
-<!--
-    <object-name>flap1.L</object-name>
-    <object-name>flap1.R</object-name>
-    <object-name>flap2.L</object-name>
-    <object-name>flap2.R</object-name>
-    <object-name>coolflap.L</object-name>
-    <object-name>coolflap.R</object-name>
-
--->
+  <inherits-from>Aircraft/spitfireIX/Models/Effects/spit9_bumpspec</inherits-from>
+    <object-name>fuselage</object-name>
+ 		<object-name>wing.L</object-name>
+  	<object-name>wing.R</object-name>
     </effect>
 
 <model>
@@ -62,6 +36,10 @@
         <y-m>0.0</y-m>
         <z-m>0.0</z-m>
   </offsets>
+
+
+
+
  </model>
 	<animation>
   <object-name>cockpit</object-name>
@@ -88,40 +66,6 @@
     <property>engines/engine[0]/rpm</property>
     <value>1000</value>
    </less-than>
-  </condition>
- </animation>
-
- <animation>
-  <type>select</type>
-  <object-name>stdtip.L</object-name>
-  <object-name>stdtip.R</object-name>
-  <condition>
-   <equals>
-    <property>sim/aircraft</property>
-    <value>spitfireIX</value>
-   </equals>
-  </condition>
- </animation>
- <animation>
-  <type>select</type>
-  <object-name>lftip.L</object-name>
-  <object-name>lftip.R</object-name>
-  <condition>
-   <equals>
-    <property>sim/aircraft</property>
-    <value>spitfireLF-IX</value>
-   </equals>
-  </condition>
- </animation>
- <animation>
-  <type>select</type>
-  <object-name>exttip.L</object-name>
-  <object-name>exttip.R</object-name>
-  <condition>
-   <equals>
-    <property>sim/aircraft</property>
-    <value>spitfireHF-IX</value>
-   </equals>
   </condition>
  </animation>
 
@@ -553,7 +497,7 @@
    </greater-than>
   </condition>
  </animation>
-<!-- left armament -->
+<!-- left armament 
     <model> 
       <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
 	  <name>leftgunblaze</name>
@@ -615,8 +559,8 @@
    </equals>
   </condition>
  </animation>
-
-<!-- right armament -->
+-->
+<!-- right armament 
 
     <model> 
       <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
@@ -679,7 +623,7 @@
    </equals>
   </condition>
  </animation>
-
+-->
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>

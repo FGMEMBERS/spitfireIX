@@ -14,11 +14,9 @@ October 2007 Detlef Faber
   <author>Detlef Faber</author>
   <status>beta</status>  
   <flight-model>yasim</flight-model>
-  <aero>spit9-yasim</aero>
+  <aero>spitLF9-yasim</aero>
   <fuel-fraction>1.0</fuel-fraction>
-	<startup>
-		<splash-texture>Aircraft/spitfireIX/spit9-splash1.png</splash-texture>
-	</startup>
+
   <systems>
    <electrical>
     <path>Aircraft/Generic/generic-electrical.xml</path>
@@ -303,28 +301,6 @@ October 2007 Detlef Faber
             <command>property-toggle</command>
             <property>controls/gear/tailwheel-lock</property>
           </binding>
-      </key>
-      <key n="100"> 
-        <name>d</name>
-        <desc>Toggle Master Arm on</desc>
-        <binding> 
-          <command>property-adjust</command>
-          <property>/controls/armament/master-arm</property>
-          <step type="double">1</step>
-          <min type="double">0</min>
-          <max type="double">1</max>
-        </binding>
-      </key>
-      <key n="68"> 
-        <name>D</name>
-        <desc>Toggle Master Arm off</desc>
-        <binding> 
-          <command>property-adjust</command>
-          <property>/controls/armament/master-arm</property>
-          <step type="double">-1</step>
-          <min type="double">0</min>
-          <max type="double">1</max>
-        </binding>
       </key>
       <key n="101">
         <name>e</name>
