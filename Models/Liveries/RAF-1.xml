@@ -80,7 +80,7 @@
         </livery>
     </model>
     <rendering>
-   <refl_correction type="string">-0.4</refl_correction>
+   <refl_correction type="string">-0.15</refl_correction>
     </rendering>
 </sim>
 </PropertyList>
