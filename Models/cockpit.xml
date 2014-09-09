@@ -1,0 +1,119 @@
+<PropertyList>
+    <model>
+      <path>Aircraft/spitfireIX/Models/Instruments/asi.xml</path>
+      <offsets> 
+        <x-m>3.805</x-m>
+        <y-m>-0.1</y-m>
+        <z-m>0.39</z-m>
+      </offsets>
+    </model>
+    <model>
+      <path>Aircraft/spitfireIX/Models/Instruments/attitude.xml</path>
+      <name>Attitude</name>
+      <offsets>
+        <x-m>3.808</x-m>
+        <y-m>0.0</y-m>
+        <z-m>0.39</z-m>
+      </offsets>
+    </model>
+    <model>
+      <path>Aircraft/spitfireIX/Models/Instruments/vsi.xml</path>
+      <offsets> 
+        <x-m>3.805</x-m>
+        <y-m>0.1</y-m>
+        <z-m>0.39</z-m>
+      </offsets>
+    </model>
+    <model>
+      <path>Aircraft/spitfireIX/Models/Instruments/altimeter.xml</path>
+      <name>Altimeter</name>
+      <offsets> 
+        <x-m>3.805</x-m>
+        <y-m>-0.1</y-m>
+        <z-m>0.285</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Instruments/compass.xml</path>
+      <offsets> 
+        <x-m>3.805</x-m>
+        <y-m>0</y-m>
+        <z-m>0.29</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Instruments/turn.xml</path>
+      <name>Turn</name>
+      <offsets> 
+        <x-m>3.805</x-m>
+        <y-m>0.1</y-m>
+        <z-m>0.285</z-m>
+      </offsets>
+    </model>
+
+<model>
+  <path>Aircraft/spitfireIX/Models/Instruments/rpm.xml</path>
+  <offsets>
+        <x-m>3.805</x-m>
+        <y-m>0.2</y-m>
+        <z-m>0.42</z-m>
+  </offsets>
+ </model>
+<model>
+  <path>Aircraft/spitfireIX/Models/Instruments/20-lb-boost.xml</path>
+  <offsets>
+        <x-m>3.805</x-m>
+        <y-m>0.265</y-m>
+        <z-m>0.37</z-m>
+  </offsets>
+ </model>
+<model>
+  <path>Aircraft/spitfireIX/Models/Instruments/oil-pressure.xml</path>
+  <offsets>
+        <x-m>3.805</x-m>
+        <y-m>0.18</y-m>
+        <z-m>0.305</z-m>
+  </offsets>
+ </model>
+<model>
+  <path>Aircraft/spitfireIX/Models/Instruments/oil-temp.xml</path>
+  <offsets>
+        <x-m>3.805</x-m>
+        <y-m>0.23</y-m>
+        <z-m>0.305</z-m>
+  </offsets>
+ </model>
+<model>
+  <path>Aircraft/spitfireIX/Models/Instruments/rad-temp.xml</path>
+  <offsets>
+        <x-m>3.805</x-m>
+        <y-m>0.3</y-m>
+        <z-m>0.305</z-m>
+  </offsets>
+ </model>
+<model>
+  <path>Aircraft/spitfireIX/Models/Instruments/fuel.xml</path>
+  <offsets>
+        <x-m>3.805</x-m>
+        <y-m>0.265</y-m>
+        <z-m>0.23</z-m>
+  </offsets>
+ </model>
+
+<model>
+  <path>Aircraft/spitfireIX/Models/Instruments/trim.xml</path>
+  <offsets>
+        <x-m>3.805</x-m>
+        <y-m>-0.2</y-m>
+        <z-m>0.27</z-m>
+  </offsets>
+ </model>
+<model>
+  <path>Aircraft/spitfireIX/Models/Instruments/triple.xml</path>
+  <offsets>
+        <x-m>3.805</x-m>
+        <y-m>-0.27</y-m>
+        <z-m>0.22</z-m>
+  </offsets>
+ </model>
+</PropertyList>
