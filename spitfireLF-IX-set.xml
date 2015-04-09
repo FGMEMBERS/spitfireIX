@@ -50,7 +50,7 @@ October 2007 Detlef Faber
 		<logo>
 			<display type="int" userarchive="y">2</display>
 			<name>FlightGear</name>
-			<texture>../../Generic/Logos/FlightGear.png</texture>
+			<texture>Aircraft/Generic/Logos/FlightGear.png</texture>
 		</logo>
 		<livery>
      <file/>
