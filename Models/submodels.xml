@@ -7,7 +7,7 @@
   <submodel>
     <name>left-1-tracer</name>
     <model>Aircraft/spitfireIX/Models/Effects/tracer.xml</model>
-    <trigger>controls/armament/gun[0]/tracer</trigger>
+    <trigger>sim/armament/gun[0]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.82</delay>
@@ -27,7 +27,7 @@
   <submodel>
     <name>left-1-nontracer</name>
     <model>Models/Geometry/null.ac</model>
-    <trigger>controls/armament/gun[0]/fire</trigger>
+    <trigger>sim/armament/gun[0]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.25</delay>
@@ -54,7 +54,7 @@
   <submodel>
     <name>left-1-tracer</name>
     <model>Aircraft/spitfireIX/Models/Effects/tracer.xml</model>
-    <trigger>controls/armament/gun[1]/tracer</trigger>
+    <trigger>sim/armament/gun[1]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.82</delay>
@@ -74,7 +74,7 @@
   <submodel>
     <name>left-1-nontracer</name>
     <model>Models/Geometry/null.ac</model>
-    <trigger>controls/armament/gun[1]/fire</trigger>
+    <trigger>sim/armament/gun[1]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.25</delay>
@@ -100,7 +100,7 @@
   <submodel>
     <name>left-cannon-tracer</name>
     <model>Aircraft/spitfireIX/Models/Effects/tracer.xml</model>
-    <trigger>controls/armament/cannon[0]/tracer</trigger>
+    <trigger>sim/armament/cannon[0]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.82</delay>
@@ -120,7 +120,7 @@
   <submodel>
     <name>left-cannon-nontracer</name>
     <model>Models/Geometry/null.ac</model>
-    <trigger>controls/armament/cannon[0]/fire</trigger>
+    <trigger>sim/armament/cannon[0]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.25</delay>
@@ -146,7 +146,7 @@
   <submodel>
     <name>right-1-tracer</name>
     <model>Aircraft/spitfireIX/Models/Effects/tracer.xml</model>
-    <trigger>controls/armament/gun[2]/fire</trigger>
+    <trigger>sim/armament/gun[2]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.82</delay>
@@ -166,7 +166,7 @@
   <submodel>
     <name>left-1-nontracer</name>
     <model>Models/Geometry/null.ac</model>
-    <trigger>controls/armament/gun[2]/fire</trigger>
+    <trigger>sim/armament/gun[2]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.25</delay>
@@ -193,7 +193,7 @@
   <submodel>
     <name>left-1-tracer</name>
     <model>Aircraft/spitfireIX/Models/Effects/tracer.xml</model>
-    <trigger>controls/armament/gun[3]/fire</trigger>
+    <trigger>sim/armament/gun[3]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.82</delay>
@@ -213,7 +213,7 @@
   <submodel>
     <name>left-1-nontracer</name>
     <model>Models/Geometry/null.ac</model>
-    <trigger>controls/armament/gun[3]/fire</trigger>
+    <trigger>sim/armament/gun[3]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.25</delay>
@@ -239,7 +239,7 @@
   <submodel>
     <name>left-cannon-tracer</name>
     <model>Aircraft/spitfireIX/Models/Effects/tracer.xml</model>
-    <trigger>controls/armament/cannon[1]/fire</trigger>
+    <trigger>sim/armament/cannon[1]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.82</delay>
@@ -259,7 +259,7 @@
   <submodel>
     <name>left-cannon-nontracer</name>
     <model>Models/Geometry/null.ac</model>
-    <trigger>controls/armament/cannon[1]/fire</trigger>
+    <trigger>sim/armament/cannon[1]/fire</trigger>
     <speed>2840.0</speed>
     <repeat>true</repeat>
     <delay>0.25</delay>

@@ -78,8 +78,7 @@
 	 </prophub_color>
         </livery>
     </model>
-    <rendering>
-   <refl_correction type="string">-0.15</refl_correction>
-    </rendering>
+   <amb_correction type="string">-0.0</amb_correction>
+   <refl_correction type="string">-0.7</refl_correction>
 </sim>
 </PropertyList>

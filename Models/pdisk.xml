@@ -6,7 +6,11 @@
 	<!--right -->
 	<!--up -->
 	
- 
+      	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>noshadow.spdisk</object-name>
+	  <object-name>noshadow.fpdisk</object-name>
+	</effect>
 
     <path>pdisk.ac</path>
 
