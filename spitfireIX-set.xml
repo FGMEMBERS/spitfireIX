@@ -12,14 +12,48 @@ October 2007 Detlef Faber
  <sim>
   <description>Supermarine Spitfire Mk IX</description>
   <author>Detlef Faber</author>
-  <status>beta</status>  
+  <rating>
+    <FDM type="int">4</FDM>
+    <systems type="int">3</systems>
+    <model type="int">4</model>
+    <cockpit type="int">3</cockpit>
+  </rating>
   <flight-model>yasim</flight-model>
   <aero>spit9-yasim</aero>
+  <armament include="Include/armament.xml"/>
   <fuel-fraction>1.0</fuel-fraction>
-	<startup>
-		<splash-texture>Aircraft/spitfireIX/spit9-splash1.png</splash-texture>
-	</startup>
+  <failure-manager>
+    <controls-failure-drag type="double">1.0</controls-failure-drag>
+    <controls-failure-roll type="double">0.7</controls-failure-roll>
+    <engines>
+      <engine n="0">
+        <propstrike type="bool">false</propstrike>
+        <propstrike-force type="float">0</propstrike-force>
+      </engine>
+    </engines>
+    <flaps type="bool">false</flaps>
+    <left-wing-torn type="bool">false</left-wing-torn>
+    <right-wing-torn type="bool">false</right-wing-torn>
+    <gear>
+      <gear n="0">
+        <jammed type="bool">false</jammed>
+      </gear>
+      <gear n="1">
+        <jammed type="bool">false</jammed>
+      </gear>
+      <gear n="2">
+        <jammed type="bool">false</jammed>
+      </gear>
+    </gear>
+      <fail-type type= "int">0</fail-type>
+	</failure-manager>
+  <startup>
+    <splash-texture>Aircraft/spitfireIX/spit9-splash1.png</splash-texture>
+  </startup>
   <systems>
+    <autopilot>
+      <path>Aircraft/spitfireIX/Systems/control-filters.xml</path>
+    </autopilot>
    <electrical>
     <path>Aircraft/Generic/generic-electrical.xml</path>
    </electrical>
@@ -29,7 +63,7 @@ October 2007 Detlef Faber
   <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
 
   <sound>
-   <path>Aircraft/p51d/p51d-sound.xml</path>
+   <path>Aircraft/spitfireIX/Sounds/spitfire-sound.xml</path>
   </sound>
 
   <submodels> 
@@ -49,68 +83,15 @@ October 2007 Detlef Faber
         <visible>1.0</visible>
       </pilot>
    </crew>
-		<logo>
-			<display type="int" userarchive="y">2</display>
-			<name>FlightGear</name>
-			<texture>Aircraft/Generic/Logos/FlightGear.png</texture>
-		</logo>
-		<livery>
-     <file/>
-		 <letter_color>
-		  <diffuse>
-		   <red>1.0</red>
-		   <green>1.0</green>
-		   <blue>1.0</blue>
-		  </diffuse>
-		  <ambient>
-		   <red>1.0</red>
-		   <green>1.0</green>
-		   <blue>1.0</blue>
-		  </ambient>
-		  <specular>
-		   <red>1.0</red>
-		   <green>1.0</green>
-		   <blue>1.0</blue>
-		  </specular>
-	  <emission>
-		   <red>0.0</red>
-		   <green>0.0</green>
-		   <blue>0.0</blue>
-		  </emission>
-		  <transparency>
-		   <alpha>1.0</alpha>
-		  </transparency>
-		  <shininess>1</shininess>
-		 </letter_color>
-	
-		 <prophub_color>
-		  <diffuse>
-		   <red>0.4</red>
-		   <green>0.0</green>
-		   <blue>0.0</blue>
-		  </diffuse>
-		  <ambient>
-		   <red>0.4</red>
-		   <green>0.0</green>
-		   <blue>0.0</blue>
-		  </ambient>
-		  <specular>
-		   <red>0.4</red>
-		   <green>0.0</green>
-		   <blue>0.0</blue>
-		  </specular>
-		  <emission>
-		   <red>0.0</red>
-		   <green>0.0</green>
-		   <blue>0.0</blue>
-		  </emission>
-		  <transparency>
-	   <alpha>1.0</alpha>
-		  </transparency>	
-		  <shininess>2</shininess>
-		 </prophub_color>
-		</livery>
-	  </model> 
+   <logo>
+      <display type="int" userarchive="y">2</display>
+      <name>FlightGear</name>
+      <texture>Aircraft/Generic/Logos/FlightGear.png</texture>
+    </logo>
+    <livery>
+      <file/>
+      </livery>
+    </model> 
 	
   <view n="0">
    <internal archive="y">true</internal>
@@ -160,7 +141,7 @@ October 2007 Detlef Faber
     <target-z-offset-m archive="y" type="double">3.49</target-z-offset-m>
    </config>
   </view>
-
+<!--
  <autopilot>
    <config>
      <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
@@ -173,7 +154,7 @@ October 2007 Detlef Faber
      <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
    </config>
  </autopilot>
-
+-->
   <hud>
    <enable3d>false</enable3d>
   </hud>  
@@ -191,21 +172,25 @@ October 2007 Detlef Faber
 						</binding>
 					</item>
 -->
-					<item>
-						<label>Select Livery</label>
-              <binding>
-                <command>nasal</command>
-                <script>aircraft.livery.dialog.toggle()</script>
-              </binding>
-					</item>
-
-					<item>
-						<label>Select Logo</label>
-              <binding>
-                <command>nasal</command>
-                <script>spit9.logo_dialog.toggle()</script>
-              </binding>
-					</item>
+        <item>
+          <label>Configuration</label>
+          <binding>
+            <command>nasal</command>
+            <script>spit9.config.open()</script>
+          </binding>
+        </item>
+        <item>
+          <label>Payload (only on Ground)</label>
+          <binding>
+            <command>nasal</command>
+            <script><![CDATA[
+              if (getprop("/velocities/groundspeed-kt") <=0.1) {
+                spit9.payload.open();
+              }
+            ]]>
+            </script>
+          </binding>
+        </item>
 					<item>
 						<label>Toggle Logo display</label>
         <binding> 
@@ -216,14 +201,8 @@ October 2007 Detlef Faber
           <max type="int">3</max>
 					<wrap>1</wrap>
         </binding>
-					</item>
-      <item>
-        <label>Registration</label>
-        <binding>
-          <command>nasal</command>
-          <script>immat.immat_dialog.toggle()</script>
-        </binding>
-      </item>
+   </item>
+
 			</menu>
 		</default>
 	</menubar>
@@ -232,67 +211,139 @@ October 2007 Detlef Faber
 			<string/>
 		</generic>
 	</multiplay>
+
+ <weight n="0">
+    <name>left Wing</name>
+    <weight-lb type="double">0</weight-lb>
+    <selected>none</selected>
+    <opt>
+      <name>Select Loadout via the Payload Dialog</name>
+      <lbs>0</lbs>
+    </opt>
+  </weight>
+
+ <weight n="1">
+    <name>Center</name>
+      <tank>1</tank>
+    <weight-lb type="double">0</weight-lb>
+    <selected>none</selected>
+    <opt>
+      <name>none</name>
+      <lbs>0</lbs>
+    </opt>
+    <opt>
+      <name>Select Loadout via the Payload Dialog</name>
+      <lbs>0</lbs>
+    </opt>
+      <opt>
+        <name>Droptank</name>
+        <lbs>50.0</lbs>
+        <gals>86</gals>
+    </opt>
+
+  </weight>
+
+ <weight n="2">
+    <name>right Wing</name>
+    <weight-lb type="double">0</weight-lb>
+    <selected>none</selected>
+    <opt>
+      <name>Select Loadout via the Payload Dialog</name>
+      <lbs>0</lbs>
+    </opt>
+  </weight>
+
 </sim>
 
  <engines>
-  <engine>
-   <rpm type="double">700</rpm>
-   <!-- fake unimplemented settings -->
-   <fuel-pump-psi type="double">18</fuel-pump-psi>
-   <oil-pressure-psi type="double">75</oil-pressure-psi>
-  </engine>
+   <engine>
+     <rpm type="double">0</rpm>
+     <cylinder-temp-degc type="float">15</cylinder-temp-degc>
+     <coolant-temp-degc type="float">15.0</coolant-temp-degc>
+     <oiltempc type = "float">15.0</oiltempc>
+     <oil-visc type = "float">0.1</oil-visc>
+     <oil-press type = "float">0.0</oil-press>
+     <fuel-press type ="float">0.0</fuel-press>
+     <rev-strain type="int">0</rev-strain>
+     <overrev type="int">0</overrev>
+     <overheat type="int">0</overheat>
+     <boost-strain type="float">0</boost-strain>
+     <carburator-entry-temp-degc type="float">15</carburator-entry-temp-degc>
+   </engine>
  </engines>
 
 
  <!-- set up control properties for YASim -->
- <controls>
-		<armament>
-				<gun n="0">
-						<serviceable type="bool">true</serviceable>
-						<fire type="bool">false</fire>
-				</gun>
-				<gun n="1">
-						<serviceable type="bool">true</serviceable>
-						<fire type="bool">false</fire>
-				</gun>
-				<gun n="2">
-						<serviceable type="bool">true</serviceable>
-						<fire type="bool">false</fire>
-				</gun>
-				<gun n="3">
-						<serviceable type="bool">true</serviceable>
-						<fire type="bool">false</fire>
-				</gun>
-				<cannon n="0">
-						<serviceable type="bool">true</serviceable>
-						<fire type="bool">false</fire>
-				</cannon>
-				<cannon n="1">
-						<serviceable type="bool">true</serviceable>
-						<fire type="bool">false</fire>
-				</cannon>
-				<trigger type="bool">false</trigger>
-				<trigger1 type="bool">false</trigger1>
-		</armament>
-   <engines>
+  <controls>
+    <armament>
+
+      <trigger type="bool">false</trigger>
+      <trigger1 type="bool">false</trigger1>
+      <trigger2 type="bool">false</trigger2>
+    </armament>
+    <engines>
       <engine n="0">
-        <magnetos>3</magnetos>
+        <magnetos>0</magnetos>
         <boost type="double">0.45</boost>
-				<blower type="int">0</blower>
+        <blower type="int">0</blower>
+        <primer type="double">0.0</primer>
+        <primer-pressed type="bool">0.0</primer-pressed>
+	<throttle-c type="float">0</throttle-c>
+        <cowl-flaps-norm type="float">0.0</cowl-flaps-norm>
+        <mixture0 type="float">0</mixture0>
       </engine>
-   </engines>
-	 <flight>
-			<slipstream type="double">1.0</slipstream>
-			<aileron-effectiveness type ="double">0.1</aileron-effectiveness>
-	 </flight>
+    </engines>
+  <flight>
+    <heaviness>
+      <aileron type="double">0.0</aileron>
+      <aileron-gain type="double">8.5</aileron-gain>
+      <elevator type="double">0.0</elevator>
+      <elevator-gain type="double">4.4</elevator-gain>
+      <rudder type="double">0.0</rudder>
+      <rudder-gain type="double">4.5</rudder-gain>
+    </heaviness>
+    <aileron-filtered type ="double">0.0</aileron-filtered>
+    <elevator-filtered type ="double">0.0</elevator-filtered>
+    <rudder-filtered type ="double">0.0</rudder-filtered>
+  </flight>
    <gear>
+      <gear n="0">
+        <gear-down type="bool">true</gear-down>
+      </gear>
+      <gear n="1">
+        <gear-down type="bool">true</gear-down>
+      </gear>
+      <gear n="2">
+        <gear-down type="bool">true</gear-down>
+      </gear>
+      <gear n="3">
+        <gear-down type="bool">false</gear-down>
+      </gear>
       <tailwheel-lock>true</tailwheel-lock>
+      <emergency-extension type="bool">false</emergency-extension>
+      <emergency-extension-pulled type="bool">false</emergency-extension-pulled>
+      <brake-parking type="bool">true</brake-parking>
    </gear>
+
    <canopy>
       <canopy-pos-norm type="float">1.0</canopy-pos-norm>
    </canopy>
 
  </controls>
+ <consumables>
+  <fuel>
+	 <on-reserve type="int">0</on-reserve>
+   <tank n="0">
+    <name>Internal</name>
+    <selected type="bool">false</selected>
+   </tank>
+   <tank n="1">
+    <name>Droptank</name>
+    <selected type="bool">false</selected>
+   </tank>
+  </fuel>
+ </consumables>
+
  <!-- Map Keys -->
  <input>
     <keyboard>
@@ -304,8 +355,8 @@ October 2007 Detlef Faber
             <property>controls/gear/tailwheel-lock</property>
           </binding>
       </key>
-      <key n="100"> 
-        <name>d</name>
+      <key n="113"> 
+        <name>q</name>
         <desc>Toggle Master Arm on</desc>
         <binding> 
           <command>property-adjust</command>
@@ -315,8 +366,8 @@ October 2007 Detlef Faber
           <max type="double">1</max>
         </binding>
       </key>
-      <key n="68"> 
-        <name>D</name>
+      <key n="81"> 
+        <name>Q</name>
         <desc>Toggle Master Arm off</desc>
         <binding> 
           <command>property-adjust</command>
@@ -325,7 +376,7 @@ October 2007 Detlef Faber
           <min type="double">0</min>
           <max type="double">1</max>
         </binding>
-      </key>
+      </key>  
       <key n="101">
         <name>e</name>
         <desc>Fire MGs</desc>
@@ -355,6 +406,21 @@ October 2007 Detlef Faber
           </binding>
         </mod-up>
       </key>
+      <key n="5">
+        <name>Ctrl-e</name>
+        <desc>drop Center Load</desc>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/armament/trigger2</property>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>property-toggle</command>
+            <property>controls/armament/trigger2</property>
+          </binding>
+        </mod-up>
+      </key>
+
      </keyboard>
  </input>
 
@@ -364,12 +430,18 @@ October 2007 Detlef Faber
     <spit9>
       <file>Aircraft/spitfireIX/Nasal/spit9.nas</file>
     </spit9>
-   <immat>
-     <file>Aircraft/spitfireIX/Nasal/immat.nas</file>
-   </immat>
-		<weapons>
-				<file>Aircraft/spitfireIX/Nasal/weapons.nas</file>
-		</weapons>
+    <merlin>
+      <file>Aircraft/spitfireIX/Nasal/merlin64.nas</file>
+    </merlin>
+    <failure>
+      <file>Aircraft/spitfireIX/Nasal/failure.nas</file>
+    </failure>
+    <weapons>
+      <file>Aircraft/spitfireIX/Nasal/weapons.nas</file>
+    </weapons>
+    <hitcheck>
+      <file>Aircraft/spitfireIX/Nasal/hitcheck.nas</file>
+    </hitcheck>
   </nasal>
 
 </PropertyList>

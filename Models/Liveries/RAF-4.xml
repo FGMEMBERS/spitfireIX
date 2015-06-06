@@ -76,10 +76,9 @@
 
 	  <shininess>0</shininess>
 	 </prophub_color>
+   <amb_correction type="string">-0.1</amb_correction>
+   <refl_correction type="string">-0.5</refl_correction>
         </livery>
     </model>
-    <rendering>
-   <refl_correction type="string">0.05</refl_correction>
-    </rendering>
 </sim>
 </PropertyList>

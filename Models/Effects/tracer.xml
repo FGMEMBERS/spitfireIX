@@ -102,14 +102,14 @@
 	        </size>
 	      </end>
 	      <life-sec>
-	        <value>0.1</value>
+	        <value>0.4</value>
 	      </life-sec>
 	      <mass-kg>0.01</mass-kg>
 	      <radius-m>0.0</radius-m>
 	    </particle>
 	    
 	    <program>
-	      <fluid>air</fluid>
+	      <fluid>water</fluid>
 	      <gravity>true</gravity>
 	      <wind>true</wind>
 	    </program>
