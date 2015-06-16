@@ -18,9 +18,9 @@
 	</params>
 
 	<path>compass-p11.ac</path>
-
+<!--
 	<offsets>
-		<!-- x/y/z == back/right/up -->
+		 x/y/z == back/right/up
 		<x-m> 0.000 </x-m>
 		<y-m> 0.000 </y-m>
 		<z-m> 0.000 </z-m>
@@ -97,7 +97,7 @@
 		</action>
 	</animation>
 
-
+ -->
 	<!--<animation>
 		<name>compass_unit</name>
 		<object-name>housing</object-name>

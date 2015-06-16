@@ -11,7 +11,7 @@
     <model>
       <path>Aircraft/spitfireIX/Models/Instruments/gunsight-mk2/gunsight-mk2.xml</path>
       <offsets> 
-        <x-m>3.98</x-m>
+        <x-m>3.99</x-m>
         <y-m>0.0</y-m>
         <z-m>0.69</z-m>
       </offsets>
@@ -20,23 +20,23 @@
       <name>stick</name>
       <path>Aircraft/spitfireIX/Models/Instruments/stick/stick.xml</path>
       <offsets> 
-        <x-m>4.25</x-m>
+        <x-m>4.21</x-m>
         <y-m>0.0</y-m>
-        <z-m>-0.39</z-m>
+        <z-m>-0.55</z-m>
       </offsets>
     </model>
     <model>
       <name>throttle</name>
       <path>Aircraft/spitfireIX/Models/Instruments/throttle/throttle.xml</path>
       <offsets> 
-        <x-m>4.0</x-m>
+        <x-m>4.15</x-m>
         <y-m>-0.32</y-m>
-        <z-m>0.045</z-m>
+        <z-m>0.1</z-m>
       </offsets>
     </model>
     <model>
       <name>stick</name>
-      <path>Aircraft/spitfireIX/Models/Instruments/uc-control/uc-control.ac</path>
+      <path>Aircraft/spitfireIX/Models/Instruments/uc-control/uc-control.xml</path>
       <offsets> 
         <x-m>3.93</x-m>
         <y-m>0.32</y-m>
@@ -163,7 +163,7 @@
   </offsets>
  </model>
 <model>
-  <path>Aircraft/spitfireIX/Models/Instruments/oil-pressure.xml</path>
+  <path>Aircraft/spitfireIX/Models/Instruments/oil-pressure-gb/oil-pressure.xml</path>
   <offsets>
         <x-m>3.844</x-m>
         <y-m>0.18</y-m>
@@ -179,7 +179,7 @@
       </offsets>
     </model>
 <model>
-  <path>Aircraft/spitfireIX/Models/Instruments/oil-temp.xml</path>
+  <path>Aircraft/spitfireIX/Models/Instruments/oil-temp-gb/oil-temp.xml</path>
   <offsets>
         <x-m>3.844</x-m>
         <y-m>0.23</y-m>
@@ -187,7 +187,7 @@
   </offsets>
  </model>
 <model>
-  <path>Aircraft/spitfireIX/Models/Instruments/rad-temp.xml</path>
+  <path>Aircraft/spitfireIX/Models/Instruments/rad-temp-gb/rad-temp.xml</path>
   <offsets>
         <x-m>3.844</x-m>
         <y-m>0.3</y-m>
@@ -195,7 +195,7 @@
   </offsets>
  </model>
 <model>
-  <path>Aircraft/spitfireIX/Models/Instruments/fuel.xml</path>
+  <path>Aircraft/spitfireIX/Models/Instruments/fuel-content/fuel.xml</path>
   <offsets>
         <x-m>3.844</x-m>
         <y-m>0.265</y-m>

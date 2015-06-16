@@ -9,13 +9,15 @@
     <button>0</button>
     <repeatable>false</repeatable>
     <binding>
-      <command>property-adjust</command>
+      <command>property-toggle</command>
       <property>/controls/engines/engine/starter</property>
-    <step>1.0</step>
-    <min>0</min>
-    <max>3</max>
-    <wrap>0</wrap>
     </binding>
+        <mod-up>
+          <binding>
+            <command>property-toggle</command>
+            <property>controls/engines/engine/starter</property>
+          </binding>
+        </mod-up>
   </action>
 </animation>
 
@@ -38,7 +40,7 @@
     
  <animation>
   <type>translate</type>
-  <object-name>button</object-name>
+  <object-name>Circle</object-name>
   <property>/controls/engine/engine[0]/starter</property>
   <interpolation>
     <entry>
