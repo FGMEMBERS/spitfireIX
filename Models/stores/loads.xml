@@ -135,7 +135,7 @@
 
 
 		
-		<!-- rockets 	-->
+		<!-- rockets 	
 		<model> 
 				<path>Aircraft/mosquito/Models/stores/rocketsR.xml</path>
 				<name>rockets.R</name>
@@ -144,7 +144,7 @@
 				<path>Aircraft/mosquito/Models/stores/rocketsL.xml</path>
 				<name>rockets.L</name>
 		</model>
-
+-->
 		<!-- wing bombs 
 		0 = not selected
 		1 = selected but dropped/gone

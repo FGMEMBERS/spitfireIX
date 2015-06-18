@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
-<!-- Supermarine Spitfire Mk IX by Detlef Faber -->
+<!-- Supermarine Spitfire Mk IX by Detlef Faber contact@flightgear-de.net
+-->
 
 <PropertyList>
 
@@ -77,12 +78,12 @@
     </unload>
   </nasal>
 
- <offsets>
-   <z-m>0.0</z-m>
- </offsets>
+  <offsets>
+    <z-m>0.0</z-m>
+  </offsets>
  
-   <effect>
- 			<inherits-from>Aircraft/spitfireIX/Models/Effects/bumpspec</inherits-from>
+  <effect>
+    <inherits-from>Aircraft/spitfireIX/Models/Effects/bumpspec</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>wing.L</object-name>
     <object-name>wing.R</object-name>
@@ -107,18 +108,14 @@
     <object-name>rudder</object-name>
     <object-name>gear.L</object-name>
     <object-name>gear.R</object-name>
-<!--
+    <object-name>alufuselage</object-name>
     <object-name>flap1.L</object-name>
     <object-name>flap1.R</object-name>
-
     <object-name>flap2.L</object-name>
     <object-name>flap2.R</object-name>
--->
     <object-name>coolflap.L</object-name>
     <object-name>coolflap.R</object-name>
-
-
-    </effect>
+  </effect>
 
 <model>
 	<name>cockpit</name>
@@ -199,7 +196,7 @@
   <type>spin</type>
   <object-name>prophub</object-name>
     <property>engines/engine[0]/rpm</property>
-    <factor>-0.01</factor>
+    <factor>-0.479</factor>
   <center>
    <x-m>0.60</x-m>
    <y-m>0.0</y-m>
@@ -501,18 +498,18 @@
   <factor>18.0</factor>
 
   <center>
-   <x-m>3.968</x-m>
-   <y-m>-3.709</y-m>
-   <z-m>-0.47</z-m>
+   <x-m>4.06761</x-m>
+   <y-m>-3.68641</y-m>
+   <z-m>-0.299766</z-m>
   </center>
 
   <axis>
-   <x1-m>3.911</x1-m>
-   <y1-m>-4.170</y1-m>
-   <z1-m>-0.265</z1-m>
-   <x2-m>4.195</x2-m>
-   <y2-m>-2.787</y2-m>
-   <z2-m>-0.368</z2-m>
+   <x1-m>3.8416</x1-m>
+   <y1-m>-4.88613</y1-m>
+   <z1-m>-0.2</z1-m>
+   <x2-m>4.21635</x2-m>
+   <y2-m>-2.78601</y2-m>
+   <z2-m>-0.38274</z2-m>
   </axis>
 
  </animation>
@@ -524,18 +521,18 @@
   <factor>18.0</factor>
 
   <center>
-   <x-m>3.968</x-m>
-   <y-m>3.709</y-m>
-   <z-m>-0.47</z-m>
+   <x-m>4.06761</x-m>
+   <y-m>3.68641</y-m>
+   <z-m>-0.299766</z-m>
   </center>
 
   <axis>
-   <x1-m>3.911</x1-m>
-   <y1-m>4.170</y1-m>
-   <z1-m>-0.265</z1-m>
-   <x2-m>4.195</x2-m>
-   <y2-m>2.787</y2-m>
-   <z2-m>-0.368</z2-m>
+   <x1-m>3.8416</x1-m>
+   <y1-m>4.88613</y1-m>
+   <z1-m>-0.2</z1-m>
+   <x2-m>4.21635</x2-m>
+   <y2-m>2.78601</y2-m>
+   <z2-m>-0.38274</z2-m>
   </axis>
 
  </animation>
@@ -655,12 +652,12 @@
       <dep>0.1</dep>
     </entry>
     <entry>
-      <ind>0.4</ind>
+      <ind>0.3</ind>
       <dep>0.4</dep>
     </entry>
     <entry>
       <ind>1.00</ind>
-      <dep>0.55</dep>
+      <dep>0.5</dep>
     </entry>
   </interpolation>
   <axis>
@@ -692,16 +689,17 @@
     </animation> 
 
   <model> 
-   <path>Aircraft/spitfireIX/Models/pilot.xml</path>
+   <path>Aircraft/Generic/Human/Models/pilot.xml</path>
    <name>pilot</name>
 		<nopreview/>
     <offsets> 
-     <x-m>4.4</x-m>
+     <x-m>4.6</x-m>
      <y-m>0.0</y-m>
-     <z-m>0.0</z-m>
-		 <pitch-deg>14.0</pitch-deg>
+     <z-m>-0.2</z-m>
+		 <pitch-deg>0.0</pitch-deg>
     </offsets>
   </model>
+<!--
  <animation>
   <type>select</type>
   <object-name>pilot</object-name>
@@ -712,7 +710,7 @@
    </greater-than>
   </condition>
  </animation>
-
+-->
 
 <!-- Wing flex, works, but hardly noticable from cockpit 
     <animation> 
@@ -745,7 +743,43 @@
       </axis>
     </animation> 
 -->
-<!-- left armament -->
+<!-- startup smoke left engine -->
+ <model>
+    <name>startup0-0</name>
+    <path>Aircraft/spitfireIX/Models/Effects/startupsmoke.xml</path>
+    <offsets>
+   <x-m>1.8</x-m>
+   <y-m>0.4</y-m>
+   <z-m>0.26</z-m>
+	 <heading-deg>20</heading-deg>
+	 <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+ <model>
+    <name>startup0-1</name>
+    <path>Aircraft/spitfireIX/Models/Effects/startupsmoke.xml</path>
+    <offsets>
+   <x-m>1.8</x-m>
+   <y-m>-0.4</y-m>
+   <z-m>0.26</z-m>
+	 <heading-deg>-20</heading-deg>
+	 <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+ <animation>
+  <type>select</type>
+  <object-name>startup0-1</object-name>
+  <object-name>startup0-0</object-name>
+  <condition>
+   <equals>
+    <property>engines/engine[0]/startup_smoke</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+<!-- left armament
     <model> 
       <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
 	  <name>leftgunblaze</name>
@@ -807,8 +841,8 @@
    </equals>
   </condition>
  </animation>
-
-<!-- right armament -->
+ -->
+<!-- right armament 
 
     <model> 
       <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
@@ -871,10 +905,11 @@
    </equals>
   </condition>
  </animation>
-
+-->
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
+    <object-name>prophub</object-name>
     <object-name>wing.L</object-name>
     <object-name>wing.R</object-name>
     <object-name>wing1.L</object-name>
@@ -905,6 +940,42 @@
     <texture>spit9-1.png</texture>
   </animation>
 
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/gunblaze.xml</path>
+	  <name>gunblaze</name>
+		<nopreview/>
+    <offsets>
+   <x-m>1.8</x-m>
+   <y-m>2.2</y-m>
+   <z-m>-0.36</z-m>
+	 <heading-deg>180</heading-deg>
+	 <pitch-deg>0</pitch-deg>
+    </offsets>
+    </model>
+ <animation>
+   <type>select</type>
+   <object-name>gunblaze</object-name>
+     <condition>
+       <equals>
+         <property>sim/model/lighting/flash-l/state</property>
+         <value>true</value>
+       </equals>
+     </condition>
+ </animation>
+
+
+<!--
+ <animation>
+  <type>select</type>
+  <object-name>alufuselage</object-name>
+  <condition>
+   <equals>
+    <property>sim/model/livery/bare-alu</property>
+    <value>true</value>
+   </equals>
+  </condition>
+ </animation>
+-->
 
 <animation>
     <type>pick</type>

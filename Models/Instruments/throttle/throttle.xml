@@ -67,7 +67,7 @@
    <z>0</z>
   </axis>
  </animation>
- 
+ <!--
  <animation>
   <type>rotate</type>
   <object-name>Lever-Cutout</object-name>
@@ -92,7 +92,7 @@
   </axis>
   
  </animation>
-
+-->
 </PropertyList>
 
 

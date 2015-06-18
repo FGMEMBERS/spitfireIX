@@ -7,6 +7,14 @@
 
 #setlistener("/sim/signals/fdm-initialized",main_loop);
 
+var flaps = func (dir) {
+  if (dir == 1 and getprop ("controls/flight/flaps") == 0 ) {
+  setprop ("controls/flight/flaps", 1 );
+  }
+  if (dir == 0 and getprop ("controls/flight/flaps") != 0 ) {
+  setprop ("controls/flight/flaps", 0 );
+  }
+}
 
 aircraft.steering.init();
 
@@ -24,3 +32,6 @@ var payload = gui.Dialog.new("/sim/gui/dialogs/payload/dialog", "Aircraft/spitfi
 var save_list = ["/combat/enabled"];
 
 aircraft.data.add(save_list);
+
+var flash_trigger = props.globals.getNode("controls/armament/trigger", 0);
+aircraft.light.new("sim/model/lighting/flash-l", [0.03, 0.044], flash_trigger);
