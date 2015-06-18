@@ -779,133 +779,7 @@
   </condition>
  </animation>
 
-<!-- left armament
-    <model> 
-      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
-	  <name>leftgunblaze</name>
-		<nopreview/>
-      <offsets> 
-        <x-m>2.9</x-m>
-        <y-m>-3.735</y-m>
-        <z-m>-0.266</z-m>
-      </offsets>
-    </model>
- <animation>
-  <type>select</type>
-  <object-name>leftgunblaze</object-name>
-  <condition>
-   <equals>
-    <property>controls/armament/gun1</property>
-    <value>true</value>
-   </equals>
-  </condition>
- </animation>
 
-    <model> 
-      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
-	  <name>leftgun2blaze</name>
-		<nopreview/>
-      <offsets> 
-        <x-m>2.9</x-m>
-        <y-m>-3.067</y-m>
-        <z-m>-0.321</z-m>
-      </offsets>
-    </model>
- <animation>
-  <type>select</type>
-  <object-name>leftgun2blaze</object-name>
-  <condition>
-   <equals>
-    <property>controls/armament/gun2</property>
-    <value>true</value>
-   </equals>
-  </condition>
- </animation>
-    <model> 
-      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
-	  <name>leftcannonblaze</name>
-		<nopreview/>
-      <offsets> 
-        <x-m>1.5</x-m>
-        <y-m>-2.08</y-m>
-        <z-m>-0.393</z-m>
-      </offsets>
-    </model>
- <animation>
-  <type>select</type>
-  <object-name>leftcannonblaze</object-name>
-  <condition>
-   <equals>
-    <property>controls/armament/cannon1</property>
-    <value>true</value>
-   </equals>
-  </condition>
- </animation>
- -->
-<!-- right armament 
-
-    <model> 
-      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
-	  <name>rightgunblaze</name>
-		<nopreview/>
-      <offsets> 
-        <x-m>2.9</x-m>
-        <y-m>3.735</y-m>
-        <z-m>-0.266</z-m>
-      </offsets>
-    </model>
- <animation>
-  <type>select</type>
-  <object-name>rightgunblaze</object-name>
-  <condition>
-   <equals>
-    <property>controls/armament/gun4</property>
-    <value>true</value>
-   </equals>
-  </condition>
- </animation>
-
-    <model> 
-      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
-	  <name>rightgun2blaze</name>
-		<nopreview/>
-      <offsets> 
-        <x-m>2.9</x-m>
-        <y-m>3.067</y-m>
-        <z-m>-0.321</z-m>
-      </offsets>
-    </model>
- <animation>
-  <type>select</type>
-  <object-name>rightgun2blaze</object-name>
-  <condition>
-   <equals>
-    <property>sim/armament/gun[3]</property>
-    <value>true</value>
-   </equals>
-  </condition>
- </animation>
-    <model> 
-      <path>Aircraft/spitfireIX/Models/Effects/blaze.xml</path>
-	  <name>rightcannonblaze</name>
-		<nopreview/>
-      <offsets> 
-        <x-m>1.5</x-m>
-        <y-m>2.08</y-m>
-        <z-m>-0.393</z-m>
-      </offsets>
-    </model>
- <animation>
-  <type>select</type>
-  <object-name>rightcannonblaze</object-name>
-  <condition>
-   <equals>
-    <property>sim/armament/cannon[1]/fire</property>
-    <value>true</value>
-   </equals>
-  </condition>
- </animation>
--->
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
@@ -940,24 +814,141 @@
     <texture>spit9-1.png</texture>
   </animation>
 
+<!-- Cannon Blaze -->
     <model> 
-      <path>Aircraft/spitfireIX/Models/Effects/gunblaze.xml</path>
-	  <name>gunblaze</name>
+      <path>Aircraft/spitfireIX/Models/Effects/cannonblaze.xml</path>
+	  <name>cannonblaze.L</name>
 		<nopreview/>
     <offsets>
-   <x-m>1.8</x-m>
-   <y-m>2.2</y-m>
-   <z-m>-0.36</z-m>
+   <x-m>1.5</x-m>
+   <y-m>-2.01761</y-m>
+   <z-m>-0.3924429</z-m>
 	 <heading-deg>180</heading-deg>
 	 <pitch-deg>0</pitch-deg>
     </offsets>
     </model>
  <animation>
    <type>select</type>
-   <object-name>gunblaze</object-name>
+   <object-name>cannonblaze.L</object-name>
      <condition>
        <equals>
-         <property>sim/model/lighting/flash-l/state</property>
+         <property>sim/model/cannon/flash/state</property>
+         <value>true</value>
+       </equals>
+     </condition>
+ </animation>
+
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/cannonblaze.xml</path>
+	  <name>cannonblaze.R</name>
+		<nopreview/>
+    <offsets>
+   <x-m>1.5</x-m>
+   <y-m>2.01761</y-m>
+   <z-m>-0.3924429</z-m>
+	 <heading-deg>180</heading-deg>
+	 <pitch-deg>0</pitch-deg>
+    </offsets>
+    </model>
+ <animation>
+   <type>select</type>
+   <object-name>cannonblaze.R</object-name>
+     <condition>
+       <equals>
+         <property>sim/model/cannon/flash/state</property>
+         <value>true</value>
+       </equals>
+     </condition>
+ </animation>
+
+<!-- MG blaze -->
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/gunblaze.xml</path>
+	  <name>gunblaze0.L</name>
+		<nopreview/>
+    <offsets>
+   <x-m>2.64402</x-m>
+   <y-m>-3.73459</y-m>
+   <z-m>-0.2657364cm</z-m>
+	 <heading-deg>180</heading-deg>
+	 <pitch-deg>0</pitch-deg>
+    </offsets>
+    </model>
+ <animation>
+   <type>select</type>
+   <object-name>gunblaze0.L</object-name>
+     <condition>
+       <equals>
+         <property>sim/model/gun0/flash/state</property>
+         <value>true</value>
+       </equals>
+     </condition>
+ </animation>
+
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/gunblaze.xml</path>
+	  <name>gunblaze1.L</name>
+		<nopreview/>
+    <offsets>
+   <x-m>2.5688</x-m>
+   <y-m>-3.06651</y-m>
+   <z-m>-0.320784</z-m>
+	 <heading-deg>180</heading-deg>
+	 <pitch-deg>0</pitch-deg>
+    </offsets>
+    </model>
+ <animation>
+   <type>select</type>
+   <object-name>gunblaze1.L</object-name>
+     <condition>
+       <equals>
+         <property>sim/model/gun1/flash/state</property>
+         <value>true</value>
+       </equals>
+     </condition>
+ </animation>
+
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/gunblaze.xml</path>
+	  <name>gunblaze0.R</name>
+		<nopreview/>
+    <offsets>
+   <x-m>2.64402</x-m>
+   <y-m>3.73459</y-m>
+   <z-m>-0.2657364cm</z-m>
+	 <heading-deg>180</heading-deg>
+	 <pitch-deg>0</pitch-deg>
+    </offsets>
+    </model>
+ <animation>
+   <type>select</type>
+   <object-name>gunblaze0.R</object-name>
+     <condition>
+       <equals>
+         <property>sim/model/gun0/flash/state</property>
+         <value>true</value>
+       </equals>
+     </condition>
+ </animation>
+
+    <model> 
+      <path>Aircraft/spitfireIX/Models/Effects/gunblaze.xml</path>
+	  <name>gunblaze1.R</name>
+		<nopreview/>
+    <offsets>
+   <x-m>2.5688</x-m>
+   <y-m>3.06651</y-m>
+   <z-m>-0.320784</z-m>
+	 <heading-deg>180</heading-deg>
+	 <pitch-deg>0</pitch-deg>
+    </offsets>
+    </model>
+ <animation>
+   <type>select</type>
+   <object-name>gunblaze1.R</object-name>
+     <condition>
+       <equals>
+         <property>sim/model/gun1/flash/state</property>
          <value>true</value>
        </equals>
      </condition>

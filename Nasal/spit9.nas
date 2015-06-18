@@ -33,5 +33,4 @@ var save_list = ["/combat/enabled"];
 
 aircraft.data.add(save_list);
 
-var flash_trigger = props.globals.getNode("controls/armament/trigger", 0);
-aircraft.light.new("sim/model/lighting/flash-l", [0.03, 0.044], flash_trigger);
+
