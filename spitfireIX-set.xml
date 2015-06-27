@@ -46,7 +46,8 @@ October 2007 Detlef Faber
       </gear>
     </gear>
       <fail-type type= "int">0</fail-type>
-	</failure-manager>
+  </failure-manager>
+  <help include="Include/help.xml"/>
   <startup>
     <splash-texture>Aircraft/spitfireIX/spit9-splash1.png</splash-texture>
   </startup>
@@ -210,17 +211,7 @@ October 2007 Detlef Faber
             </script>
           </binding>
         </item>
-					<item>
-						<label>Toggle Logo display</label>
-        <binding> 
-          <command>property-adjust</command>
-          <property>sim/model/logo/display</property>
-          <step type="int">1</step>
-          <min type="int">0</min>
-          <max type="int">3</max>
-					<wrap>1</wrap>
-        </binding>
-   </item>
+
 
 			</menu>
 		</default>
@@ -279,6 +270,7 @@ October 2007 Detlef Faber
      <rpm type="double">0</rpm>
      <cylinder-temp-degc type="float">15</cylinder-temp-degc>
      <coolant-temp-degc type="float">15.0</coolant-temp-degc>
+     <crankloop type="float">0</crankloop>
      <oiltempc type = "float">15.0</oiltempc>
      <oil-visc type = "float">0.1</oil-visc>
      <oil-press type = "float">0.0</oil-press>
@@ -286,6 +278,7 @@ October 2007 Detlef Faber
      <rev-strain type="int">0</rev-strain>
      <overrev type="int">0</overrev>
      <overheat type="int">0</overheat>
+     <primed type="float">0</primed>
      <boost-strain type="float">0</boost-strain>
      <carburator-entry-temp-degc type="float">15</carburator-entry-temp-degc>
    </engine>

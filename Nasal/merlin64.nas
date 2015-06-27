@@ -8,6 +8,7 @@ var carbetemp = props.globals.getNode("engines/engine["~ en ~"]/carburator-entry
 var manpress = props.globals.getNode("engines/engine["~ en ~"]/mp-osi");
 var engstat = props.globals.getNode("engines/engine["~ en ~"]/running");
 var engcrank = props.globals.getNode("engines/engine["~ en ~"]/cranking");
+var primed = props.globals.getNode("engines/engine["~ en ~"]/primed");
 var oiltemp = props.globals.getNode("engines/engine["~ en ~"]/oil-temperature-degf");
 var blower = props.globals.getNode("controls/engines/engine["~ en ~"]/boost");
 var airspeed = props.globals.getNode("velocities/airspeed-kt");
@@ -36,19 +37,23 @@ var init = func {
 	cyltemp.setDoubleValue (et0);
 	
   if (getprop("/controls/engines/on-startup-running") == 1) {
-		magicstart();
-  }  
+  magicstart();
+  }  else {
+    nofuel.setAttribute("writable",0);
+
+  }
   settimer(main_loop, looptime);
 }
 var main_loop = func {
 #	print ("engstat: ", engstat.getValue());
 	if (engstat.getValue() == 1){
-		engine_update();
-		fluid_update();
-		check_engine();
-		set_prop();
-		set_boost();
+  engine_update();
+  fluid_update();
+  check_engine();
+  set_prop();
+  set_boost();
 	} else {
+          nofuel.setAttribute("writable",0);
 	  check_startup();
         }
   settimer(main_loop, looptime);
@@ -85,10 +90,10 @@ var engine_update = func {
 #	print (throttle_s," ", getprop (throttle_c));
 
 	if (getprop (throttle_c) > 1) {
-		setprop (throttle_c,1);
+  setprop (throttle_c,1);
 	}
 	if (getprop (throttle_c) < 0) {
-		setprop (throttle_c,0);
+  setprop (throttle_c,0);
 	}
 
 	var xx = getprop (throttle_c)  + ((throttle_s - manpress.getValue())*0.0015);
@@ -99,11 +104,11 @@ var engine_update = func {
 var set_boost = func {
 
 	if (getprop(alt) > blowershiftalt) {
-		setprop (boost, highblower);
-		}
+  setprop (boost, highblower);
+  }
 	if (getprop(alt) < blowershiftalt) {
-		setprop (boost, lowblower);
-		}
+  setprop (boost, lowblower);
+  }
 }
 var set_prop = func {
   if (getprop("/controls/engines/engine[0]/prop-auto") == 1) {  
@@ -125,7 +130,7 @@ var fluid_update = func {
 	interpolate ("engines/engine["~ en ~"]/oil-press", 8.2 - 2*visc, looptime);
 	interpolate ("engines/engine["~ en ~"]/oil-temp-calc", otemp *visc-70, looptime);
 	if (visc < 1.0 ) {
-		interpolate ("engines/engine["~ en ~"]/oil-visc", visc + 0.002);
+  interpolate ("engines/engine["~ en ~"]/oil-visc", visc + 0.002);
 
 	}
 }
@@ -136,55 +141,64 @@ var check_engine = func {
 	var mp = manpress.getValue();
 
 	if (getprop ("engines/engine["~ en ~"]/startup")) {
-#			print ("startup!");
-			setprop ("engines/engine["~ en ~"]/startup_smoke",1);
-			setprop ("engines/engine["~ en ~"]/startup",0);
-			settimer (func { setprop ("engines/engine["~ en ~"]/startup_smoke",0)},3);
+#  	print ("startup!");
+  	setprop ("engines/engine["~ en ~"]/startup_smoke",1);
+  	setprop ("engines/engine["~ en ~"]/startup",0);
+  	settimer (func { setprop ("engines/engine["~ en ~"]/startup_smoke",0)},3);
 	}	
 	#check for overrev
 	if (rpm0 > 3100) {
-		var rs0 = 0.01 * (rpm0 - 3100) * ( rpm0 - 3100);
-		rstrain.setValue (rs + rs0);
-		# print (rs0, " ",rs + rs0);
+  var rs0 = 0.01 * (rpm0 - 3100) * ( rpm0 - 3100);
+  rstrain.setValue (rs + rs0);
+  # print (rs0, " ",rs + rs0);
 	}
 	if (rs > 300000 ) {
-		setprop("/engines/engine["~ en ~"]/overrev", 1);
-		kill_engine();
+  setprop("/engines/engine["~ en ~"]/overrev", 1);
+  kill_engine();
 	}	
 	#check for overboost
 	if (mp > 55) {
-		var ob0 = ( mp - 57)*(mp - 57);
-		oboost.setValue (ob + ob0);
-		# print (ob0, " ",ob + ob0);"engines/engine["~ en ~"]/cylinder-temp-degc"
+  var ob0 = ( mp - 57)*(mp - 57);
+  oboost.setValue (ob + ob0);
+  # print (ob0, " ",ob + ob0);"engines/engine["~ en ~"]/cylinder-temp-degc"
 	}
 	if (ob > 500 ) {
-		setprop("/engines/engine["~ en ~"]/overboost", 1);
-		failure.kill_engine();
+  setprop("/engines/engine["~ en ~"]/overboost", 1);
+  failure.kill_engine();
 	}
 	if ( gload.getValue() < -0.3 ) {
-			print ("cutout!");
-			if (mixture0.getValue() == 0 ){
-					mixture0.setValue( mixture.getValue() );
-					mixture.setValue(0);
-			}
+  	print ("cutout!");
+  	if (mixture0.getValue() == 0 ){
+    	mixture0.setValue( mixture.getValue() );
+    	mixture.setValue(0);
+  	}
 	} else {
-			if (mixture0.getValue() != 0 ) {
-					mixture.setValue( mixture0.getValue() );
-					mixture0.setValue(0);
-			}
+  	if (mixture0.getValue() != 0 ) {
+    	mixture.setValue( mixture0.getValue() );
+    	mixture0.setValue(0);
+  	}
 	}
 }
 
 var check_startup = func {
-	if (engstat.getValue() == 0){
-	#	print (" engine off");
-		if (engcrank.getValue() ) {
-			#	print (" commencing startup");
-				setprop ("engines/engine["~ en ~"]/startup",1);
-		} else {
-		#		print ("no startup");
-				setprop ("engines/engine["~ en ~"]/startup",0);
-		}
+  if (engstat.getValue() == 0){
+  setprop ("engines/engine["~ en ~"]/crankloop",rpm.getValue()*0.008);
+  if (getprop ("engines/engine["~ en ~"]/crankloop") > 1) {
+    setprop ("engines/engine["~ en ~"]/crankloop",0);
+  }
+#	print (" engine off");
+  if (engcrank.getValue() ) {
+#	print (" commencing startup");
+
+
+    if (rpm.getValue() >=200 and primed.getValue()>=1) {
+      nofuel.setAttribute("writable",1);
+      setprop ("engines/engine["~ en ~"]/startup",1);
+    }
+  } else {
+  #  print ("no startup");
+     setprop ("engines/engine["~ en ~"]/startup",0);
+  }
 	}
 
 
@@ -208,48 +222,49 @@ var magicstart = func {
     setprop("/engines/engine["~ en ~"]/oil-visc",1);
     setprop("/engines/engine["~ en ~"]/rpm",800);
     setprop("/engines/engine["~ en ~"]/engine-running",1);
+    nofuel.setAttribute("writable",1);
     setprop("/engines/engine["~ en ~"]/out-of-fuel",0);
 }
 
 
 var open_cowlflaps = func {
 	if (cowlflap.getValue() < 1.0){
-		interpolate("controls/engines/engine["~ en ~"]/cowl-flaps-norm",cowlflap.getValue() + 0.1,1);
+  interpolate("controls/engines/engine["~ en ~"]/cowl-flaps-norm",cowlflap.getValue() + 0.1,1);
 	}
 }
 var close_cowlflaps = func {
 	if (cowlflap.getValue() > 0.0){
-		interpolate("controls/engines/engine["~ en ~"]/cowl-flaps-norm",cowlflap.getValue() -0.1,1);
+  interpolate("controls/engines/engine["~ en ~"]/cowl-flaps-norm",cowlflap.getValue() -0.1,1);
 	}
 }
 
 var shift_blower_up = func {
 	if (blower.getValue() <= 0.3){
-		interpolate("controls/engines/engine["~ en ~"]/boost", 0.75, 45);
+  interpolate("controls/engines/engine["~ en ~"]/boost", 0.75, 45);
 	}
 	else {
-		interpolate("controls/engines/engine["~ en ~"]/boost", 1.0, 45);
+  interpolate("controls/engines/engine["~ en ~"]/boost", 1.0, 45);
 	}
 }
 var shift_blower_dn = func {
 	if (blower.getValue() >= 1.0){
-		interpolate("controls/engines/engine["~ en ~"]/boost", 0.75, 45);
+  interpolate("controls/engines/engine["~ en ~"]/boost", 0.75, 45);
 	}
 	else {
-		interpolate("controls/engines/engine["~ en ~"]/boost", 0.3, 45);
+  interpolate("controls/engines/engine["~ en ~"]/boost", 0.3, 45);
 	}
 }
 
 var starter = func {
 	starter_power = getprop("/systems/electrical/volts");
 	if(starter_power == nil)
-		{starter_power = 0;}
+  {starter_power = 0;}
 	if (arg[0] == 1){
-		if( starter_power > 5.0){ 
-			setprop("/controls/engines/engine["~ en ~"]/starter",1);
-		}
-		}else{
-			setprop("/controls/engines/engine["~ en ~"]/starter",0);}	
+  if( starter_power > 5.0){ 
+  	setprop("/controls/engines/engine["~ en ~"]/starter",1);
+  }
+  }else{
+  	setprop("/controls/engines/engine["~ en ~"]/starter",0);}	
 	}
 
 
