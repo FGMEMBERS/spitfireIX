@@ -48,20 +48,32 @@
         <script>aircraft.livery.dialog.toggle()</script>
 			</binding>
     </button>
-    <button>
-			<legend>Select Logo</legend>
-      <equal>true</equal>
-      <default>true</default>
+      <text>
             <row>1</row>
             <col>0</col>
-			<binding> 
-        <command>nasal</command>
-        <script>spit9.logo_dialog.toggle()</script>
-			</binding>
-    </button>
-
+            <label>Tailwheel steerable</label>
+        </text>
         <text>
             <row>2</row>
+            <col>0</col>
+            <label>(requires Restart)</label>
+        </text>
+
+        <checkbox>
+	    <name>Tailwheel</name>
+            <halign>left</halign>
+            <row>1</row>
+            <col>1</col>	
+            <property>/controls/gear/tailwheel-steerable</property>
+	    <binding>
+		<command>dialog-apply</command>
+		<object-name>Tailwheel</object-name>
+	    </binding>
+        </checkbox>
+
+
+        <text>
+            <row>3</row>
             <col>0</col>
             <label>Combat Mode</label>
         </text>
@@ -69,7 +81,7 @@
         <checkbox>
 	    <name>combatmode</name>
             <halign>left</halign>
-            <row>3</row>
+            <row>4</row>
             <col>1</col>	
             <property>/combat/enabled</property>
 	    <binding>

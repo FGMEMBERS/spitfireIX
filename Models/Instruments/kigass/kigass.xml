@@ -37,6 +37,13 @@
       <command>property-toggle</command>
       <property>/controls/engine/engine[0]/primer-pressed</property>
     </binding>
+    <binding> 
+      <command>property-adjust</command>
+      <property>/engines/engine[0]/primed</property>
+      <step type="double">0.25</step>
+      <min type="double">0</min>
+      <max type="double">1</max>
+    </binding>
         <mod-up>
           <binding>
             <command>property-toggle</command>

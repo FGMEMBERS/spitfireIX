@@ -15,6 +15,7 @@ var aileron = props.globals.getNode("controls/flight/aileron-filtered");
 var gear0 = props.globals.getNode("controls/gear/gear[0]/gear-down");
 var gear1 = props.globals.getNode("controls/gear/gear[1]/gear-down");
 var gear2 = props.globals.getNode("controls/gear/gear[2]/gear-down");
+var gear3 = props.globals.getNode("controls/gear/gear[3]/gear-down");
 var nofuel = props.globals.getNode("engines/engine[0]/out-of-fuel",1 );
 var engon = props.globals.getNode("engines/engine[0]/running",1 );
 var hitx = props.globals.getNode("combat/hit/hit_x",1 );
@@ -25,14 +26,14 @@ var hitvalid = props.globals.getNode("combat/hit/valid",1 );
 
 var init = func {
 
-		settimer(main_loop, looptime);
+  settimer(main_loop, looptime);
 }
 
 
 var main_loop = func {
-		check_airframe();
+  check_airframe();
 
-  	settimer(main_loop, looptime);
+  settimer(main_loop, looptime);
 }
 
 
@@ -131,6 +132,7 @@ var tear_wing = func {
 												aileron.setAttribute("writable", 0);
 										}
 }
+
 
 # lower gear
 setlistener("/controls/gear/gear-down", func(n) {

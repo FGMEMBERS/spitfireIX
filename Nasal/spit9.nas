@@ -29,9 +29,8 @@ var logo_dialog = gui.OverlaySelector.new("Select Logo", "Aircraft/Generic/Logos
 var config = gui.Dialog.new("/sim/gui/dialogs/appearance/dialog", "Aircraft/spitfireIX/Dialogs/config.xml");
 var payload = gui.Dialog.new("/sim/gui/dialogs/payload/dialog", "Aircraft/spitfireIX/Dialogs/payload.xml");
 
-var save_list = ["/combat/enabled"];
-
+var save_list = ["/combat/enabled",
+                "/controls/gear/tailwheel-steerable"];
 aircraft.data.add(save_list);
 
-var flash_trigger = props.globals.getNode("controls/armament/trigger", 0);
-aircraft.light.new("sim/model/lighting/flash-l", [0.03, 0.044], flash_trigger);
+

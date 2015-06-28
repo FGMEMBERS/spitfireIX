@@ -22,10 +22,7 @@
     <property>engines/engine[0]/rpm</property>
     <value>2001</value>
    </less-than>
-   <greater-than>
-    <property>engines/engine[0]/rpm</property>
-    <value>1000</value>
-   </greater-than>
+
   </condition>
  </animation>
 
