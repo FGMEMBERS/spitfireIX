@@ -81,18 +81,18 @@ October 2007 Detlef Faber
    <path>Aircraft/spitfireIX/Models/SpitfireIX.xml</path>
    <crew>
       <pilot>
-        <pose include="Aircraft/spitfireIX/Include/pilot-pose.xml"/>
+        <pose include="Include/pilot-pose.xml"/>
         <visible>1.0</visible>
       </pilot>
    </crew>
 
-    <livery>
-      <bare-alu type="bool">false</bare-alu>
-      <file/>
-      <amb_correction type="string">0.1</amb_correction>
-      <refl_correction type="string">-0.7</refl_correction>
-      </livery>
-    </model> 
+   <livery>
+     <bare-alu type="bool">false</bare-alu>
+     <file/>
+     <amb_correction type="string">0.1</amb_correction>
+     <refl_correction type="string">-0.7</refl_correction>
+   </livery>
+  </model> 
 	
   <view n="0">
    <internal archive="y">true</internal>

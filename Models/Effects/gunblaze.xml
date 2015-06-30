@@ -12,7 +12,7 @@
  	</animation>
  
 	<effect>
-		<inherits-from>Aircraft/spitfirIX/Models/Effects/gunblaze</inherits-from>
+		<inherits-from>Aircraft/spitfireIX/Models/Effects/gunblaze</inherits-from>
 		<object-name>Bounding_box</object-name>
 	</effect>
  
