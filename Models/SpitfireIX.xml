@@ -983,7 +983,7 @@
 	 <heading-deg>180</heading-deg>
 	 <pitch-deg>0</pitch-deg>
     </offsets>
-    </model>
+  </model>
  <animation>
    <type>select</type>
    <object-name>gunblaze1.R</object-name>

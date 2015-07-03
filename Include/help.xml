@@ -7,10 +7,6 @@
     <desc>toggle Tailwheel Lock</desc>
   </key>
   <key>
-    <name>Ctrl-p</name>
-    <desc>Toggle automatic Propeller Adjustment</desc>
-  </key>
-  <key>
     <name>N</name>
     <desc>Propeller Coarse</desc>
   </key>
