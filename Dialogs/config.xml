@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-    <name>config</name>
+    <name>Spit_config</name>
     <modal>false</modal>
     <draggable>true</draggable>
     <layout>vbox</layout>
@@ -10,7 +10,7 @@
     <y>-40</y>
 
     <group>
-        <padding>4</padding>
+        <padding>8</padding>
         <layout>hbox</layout>
 
         <text>
@@ -81,12 +81,49 @@
         <checkbox>
 	    <name>combatmode</name>
             <halign>left</halign>
-            <row>4</row>
+            <row>3</row>
             <col>1</col>	
             <property>/combat/enabled</property>
 	    <binding>
 		<command>dialog-apply</command>
 		<object-name>combatmode</object-name>
+	    </binding>
+        </checkbox>
+
+
+        <text>
+            <row>4</row>
+            <col>0</col>
+            <label>Start Idling</label>
+        </text>
+
+        <checkbox>
+	    <name>idling</name>
+            <halign>left</halign>
+            <row>4</row>
+            <col>1</col>	
+            <property>/controls/startup/idling</property>
+	    <binding>
+		<command>dialog-apply</command>
+		<object-name>idling</object-name>
+	    </binding>
+        </checkbox>
+
+        <text>
+            <row>5</row>
+            <col>0</col>
+            <label>Configure Startup</label>
+        </text>
+
+        <checkbox>
+	    <name>confstart</name>
+            <halign>left</halign>
+            <row>5</row>
+            <col>1</col>	
+            <property>/controls/startup/config</property>
+	    <binding>
+		<command>dialog-apply</command>
+		<object-name>confstart</object-name>
 	    </binding>
         </checkbox>
 

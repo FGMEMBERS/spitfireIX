@@ -158,7 +158,7 @@ October 2007 Detlef Faber
      <y-offset-m archive="y" type="double">0.59</y-offset-m>
      <z-offset-m archive="y" type="double">3.95</z-offset-m>
      <pitch-offset-deg>-1</pitch-offset-deg>
-		 <heading-offset-deg>190</heading-offset-deg>
+   <heading-offset-deg>190</heading-offset-deg>
     </config>
   </view>
 <!--
@@ -178,20 +178,20 @@ October 2007 Detlef Faber
   <hud>
    <enable3d>false</enable3d>
   </hud>  
-	<menubar>
-		<default>
-			<menu n="10">
-				<label>SpitfireIX</label>
-					<enabled type="bool">true</enabled>
-<!--
-					<item>
-						<label>Magically start engine</label>
-						<binding>
-							<command>nasal</command>
-							<script>f4u.magicstart();</script>
-						</binding>
-					</item>
--->
+  <menubar>
+    <default>
+      <menu n="10">
+        <label>SpitfireIX</label>
+    	<enabled type="bool">true</enabled>
+
+        <item>
+          <label>Magically start engine</label>
+          <binding>
+      	    <command>nasal</command>
+      	    <script>merlin.magicstart();</script>
+          </binding>
+    	</item>
+
         <item>
           <label>Configuration</label>
           <binding>
@@ -213,13 +213,13 @@ October 2007 Detlef Faber
         </item>
 
 
-			</menu>
-		</default>
+  	</menu>
+  </default>
 	</menubar>
 	<multiplay>
-		<generic>
-			<string/>
-		</generic>
+  <generic>
+  	<string/>
+  </generic>
 	</multiplay>
 
  <weight n="0">
@@ -342,6 +342,10 @@ October 2007 Detlef Faber
       <canopy-pos-norm type="float">1.0</canopy-pos-norm>
    </canopy>
 
+    <startup>
+      <config type="bool" userarchive="y">0</config>
+      <idling type="bool" userarchive="y">1</idling>
+    </startup>
  </controls>
  <consumables>
   <fuel>
@@ -431,10 +435,12 @@ October 2007 Detlef Faber
 
 <!-- Nasal files/scripts -->
   <nasal>
-
     <spit9>
       <file>Aircraft/spitfireIX/Nasal/spit9.nas</file>
     </spit9>
+    <startup>
+      <file>Aircraft/spitfireIX/Nasal/startup.nas</file>
+    </startup>
     <merlin>
       <file>Aircraft/spitfireIX/Nasal/merlin64.nas</file>
     </merlin>
