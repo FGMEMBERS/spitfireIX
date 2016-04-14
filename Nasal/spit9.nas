@@ -30,7 +30,9 @@ var config = gui.Dialog.new("/sim/gui/dialogs/appearance/dialog", "Aircraft/spit
 var payload = gui.Dialog.new("/sim/gui/dialogs/payload/dialog", "Aircraft/spitfireIX/Dialogs/payload.xml");
 
 var save_list = ["/combat/enabled",
-                "/controls/gear/tailwheel-steerable"];
+                 "/controls/gear/tailwheel-steerable",
+                 "/controls/startup/idling",
+                 "/controls/startup/config"];
 aircraft.data.add(save_list);
 
 
