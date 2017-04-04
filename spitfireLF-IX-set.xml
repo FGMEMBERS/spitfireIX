@@ -17,6 +17,17 @@ October 2007 Detlef Faber
   <aero>spitLF9-yasim</aero>
   <fuel-fraction>1.0</fuel-fraction>
 
+  <tags>
+    <tag>fighter</tag>
+    <tag>ww2</tag>
+    <tag>1930s</tag>
+    <tag>1940s</tag>
+    <tag>retractable-gear</tag>
+    <tag>tail-dragger</tag>
+    <tag>piston</tag>
+    <tag>single-engine</tag>
+  </tags>
+
   <variant-of>spitfireIX</variant-of>
   
   <systems>
