@@ -18,6 +18,16 @@ October 2007 Detlef Faber
     <model type="int">4</model>
     <cockpit type="int">3</cockpit>
   </rating>
+  <tags>
+    <tag>fighter</tag>
+    <tag>ww2</tag>
+    <tag>1930s</tag>
+    <tag>1940s</tag>
+    <tag>retractable-gear</tag>
+    <tag>tail-dragger</tag>
+    <tag>piston</tag>
+    <tag>single-engine</tag>
+  </tags>
   <flight-model>yasim</flight-model>
   <aero>spit9-yasim</aero>
   <armament include="Include/armament.xml"/>
