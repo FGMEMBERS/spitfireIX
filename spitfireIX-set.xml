@@ -102,7 +102,8 @@ October 2007 Detlef Faber
      <amb_correction type="string">0.1</amb_correction>
      <refl_correction type="string">-0.7</refl_correction>
    </livery>
-  </model> 
+   <variant>0</variant>
+  </model>
 	
   <view n="0">
    <internal archive="y">true</internal>
