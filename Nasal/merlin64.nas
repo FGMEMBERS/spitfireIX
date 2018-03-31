@@ -27,8 +27,8 @@ var alt = "instrumentation/altimeter/pressure-alt-ft";
 var boost = "controls/engines/engine["~ en ~"]/boost";
 var mp_max = 46;
 var mp_idle = 3;
-var blowershiftalt = 13700;
-var lowblower = 0.45;
+var blowershiftalt = 22000;
+var lowblower = 0.65;
 var highblower = 1;
 
 var init = func {

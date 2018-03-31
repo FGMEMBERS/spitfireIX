@@ -10,7 +10,8 @@ October 2007 Detlef Faber
 <PropertyList>
 
  <sim>
-  <description>Supermarine Spitfire Mk LF.IX</description>
+
+  <description>Supermarine Spitfire LF Mk IX</description>
   <author>Detlef Faber</author>
   <status>beta</status>
   <flight-model>yasim</flight-model>

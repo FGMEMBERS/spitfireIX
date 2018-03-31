@@ -4,11 +4,11 @@
 <sim>
     <model>
         <livery>
-            <name type="string">RAF grey</name>
+            <name type="string">RAF GZ ?</name>
 
             <texture>spit9-1.png</texture>
 
-   <amb_correction type="string">0.1</amb_correction>
+   <amb_correction type="string">0.15</amb_correction>
    <refl_correction type="string">-0.7</refl_correction>
 
         </livery>
