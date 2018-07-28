@@ -241,9 +241,7 @@ October 2007 Detlef Faber
 		</default>
 	</menubar>
 	<multiplay>
-		<generic>
-			<string/>
-		</generic>
+          <fallback-model-index type="int">404</fallback-model-index>
 	</multiplay>
 </sim>
 
