@@ -111,6 +111,7 @@ October 2007 Detlef Faber
   <model>
    <wingtip type="int">0</wingtip>
    <path>Aircraft/spitfireIX/Models/SpitfireIX.xml</path>
+   <fallback-model-index type="int">404</fallback-model-index>
    <crew>
       <pilot>
         <pose include="Include/pilot-pose.xml"/>
@@ -257,9 +258,6 @@ October 2007 Detlef Faber
   	</menu>
   </default>
 	</menubar>
-	<multiplay>
-          <fallback-model-index type="int">404</fallback-model-index>
-	</multiplay>
 
  <weight n="0">
     <name>left Wing</name>
