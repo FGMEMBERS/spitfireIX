@@ -8,7 +8,7 @@ YASim aerodynamic model for a Spitfire Mk IX
 -->
 
 <!-- Weight of everything but fuel  -->
-<airplane mass="5090">
+<airplane mass="5090" version="YASIM_VERSION_CURRENT">
 
 <!-- Approach configuration -->
 <approach speed="82" aoa="8">
@@ -49,7 +49,6 @@ YASim aerodynamic model for a Spitfire Mk IX
   <stall aoa="11" width="8" peak="2.0"/>
   <flap0 start="0.0" end="1.0" lift="1.9" drag="1.8"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
   <control-speed control="FLAP0" transition-time="5"/>
 </wing>

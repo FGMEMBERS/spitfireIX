@@ -516,7 +516,7 @@
  <animation>
   <type>rotate</type>
   <object-name>aileron.L</object-name>
-  <property>/surface-positions/aileron-pos-norm</property>
+  <property>surface-positions/aileron-pos-norm</property>
   <factor>18.0</factor>
 
   <center>
@@ -539,7 +539,7 @@
  <animation>
   <type>rotate</type>
   <object-name>aileron.R</object-name>
-  <property>/surface-positions/aileron-pos-norm</property>
+  <property>surface-positions/aileron-pos-norm</property>
   <factor>18.0</factor>
 
   <center>
@@ -663,7 +663,7 @@
   <type>translate</type>
   <object-name>canopyframe</object-name>
   <object-name>canopyglass</object-name>
-  <property>/controls/doors/canopy/position-norm</property>
+  <property>controls/doors/canopy/position-norm</property>
   <interpolation>
     <entry>
       <ind>0.0</ind>
@@ -693,7 +693,7 @@
       <type>rotate</type>
   <object-name>cockpitdoor</object-name>
   <object-name>cockpitdoor.001</object-name>
-      <property>/controls/doors/door/position-norm</property>
+      <property>controls/doors/door/position-norm</property>
       <factor>170</factor>
       <center> 
         <x-m>4.57275</x-m>

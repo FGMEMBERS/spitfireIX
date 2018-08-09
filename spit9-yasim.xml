@@ -14,8 +14,8 @@ YASim aerodynamic model for a Spitfire Mk IX
 <approach speed="72" aoa="13">
   <control-setting axis="/controls/engines/engine[0]/throttle-c" value="0.5"/>
   <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
-  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.1"/>
-  <control-setting axis="/controls/engines/engine[0]/boost" value="0.0"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[0]/boost" value="0.65"/>
   <control-setting axis="/controls/flight/flaps" value="1.0"/>
   <control-setting axis="/controls/gear/gear-down" value="1"/>
 </approach>
@@ -24,7 +24,7 @@ YASim aerodynamic model for a Spitfire Mk IX
 <cruise speed="306" alt="27000">
   <control-setting axis="/controls/engines/engine[0]/throttle-c" value="1.00"/>
   <control-setting axis="/controls/engines/engine[0]/mixture" value="0.60"/>
-  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.5"/>
   <control-setting axis="/controls/engines/engine[0]/boost" value="1.0"/>
   <control-setting axis="/controls/flight/flaps" value="0.0"/>
   <control-setting axis="/controls/gear/gear-down" value="0"/>
@@ -101,7 +101,7 @@ YASim aerodynamic model for a Spitfire Mk IX
            cruise-alt="10800" cruise-power="1300"
            cruise-speed="290" cruise-rpm="1300"
            gear-ratio="0.479"
-           min-rpm="862" max-rpm="1437" >
+           min-rpm="862" max-rpm="1437" fine-stop="0.5">
   <actionpt x="-0.85" y="0" z="0.126"/>
   <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
   <piston-engine
