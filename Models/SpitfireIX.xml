@@ -817,7 +817,7 @@
       <object-name>exttip.R</object-name>
   <condition>
    <equals>
-    <property>sim/model/wingtip</property>
+    <property>sim/model/variant</property>
     <value>1</value>
    </equals>
   </condition>
@@ -828,7 +828,7 @@
       <object-name>lftip.R</object-name>
   <condition>
    <equals>
-    <property>sim/model/wingtip</property>
+    <property>sim/model/variant</property>
     <value>2</value>
    </equals>
   </condition>
@@ -839,7 +839,7 @@
       <object-name>stdtip.R</object-name>
   <condition>
    <equals>
-    <property>sim/model/wingtip</property>
+    <property>sim/model/variant</property>
     <value>0</value>
    </equals>
   </condition>

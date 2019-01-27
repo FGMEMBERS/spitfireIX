@@ -109,7 +109,7 @@ October 2007 Detlef Faber
   </panel>
 
   <model>
-   <wingtip type="int">0</wingtip>
+   <variant type="int">0</variant> <!-- determines wingtip -->
    <path>Aircraft/spitfireIX/Models/SpitfireIX.xml</path>
    <fallback-model-index type="int">404</fallback-model-index>
    <crew>
@@ -133,7 +133,6 @@ October 2007 Detlef Faber
        <shininess type="float">92</shininess>
      </material>
    </livery>
-   <variant>0</variant>
   </model>
 	
   <view n="0">
