@@ -27,7 +27,7 @@
     <repeatable>false</repeatable>
     <binding>
       <command>property-toggle</command>
-      <property>/consumables/fuel/tank[0]/selected</property>
+      <property>consumables/fuel/tank[0]/selected</property>
     </binding>
   </action>
 </animation>
@@ -35,7 +35,7 @@
     <animation> 
       <type>material</type>
       <emission> 
-        <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <factor-prop>controls/lighting/panel-norm</factor-prop>
         <red>0.75</red>
         <green>0.25</green>
         <blue>0.25</blue>

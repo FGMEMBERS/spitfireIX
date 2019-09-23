@@ -10,7 +10,8 @@ October 2007 Detlef Faber
 <PropertyList>
 
  <sim>
-  <description>Supermarine Spitfire Mk LF.IX</description>
+
+  <description>Supermarine Spitfire LF Mk IX</description>
   <author>Detlef Faber</author>
   <status>beta</status>
   <flight-model>yasim</flight-model>
@@ -55,6 +56,7 @@ October 2007 Detlef Faber
 
   <model>
    <path>Aircraft/spitfireIX/Models/SpitfireIX.xml</path>
+   <fallback-model-index type="int">404</fallback-model-index>
    <crew>
       <pilot>
         <visible>1.0</visible>
@@ -121,6 +123,7 @@ October 2007 Detlef Faber
 		  <shininess>2</shininess>
 		 </prophub_color>
 		</livery>
+                <variant type="int">2</variant>
 	  </model>
 
   <view n="0">
@@ -238,11 +241,6 @@ October 2007 Detlef Faber
 			</menu>
 		</default>
 	</menubar>
-	<multiplay>
-		<generic>
-			<string/>
-		</generic>
-	</multiplay>
 </sim>
 
  <engines>

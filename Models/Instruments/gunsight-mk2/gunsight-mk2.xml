@@ -4,20 +4,37 @@
 
 <PropertyList>
 
- <path>gunsight-mk2.ac</path>
+  <path>gunsight-mk2.ac</path>
 
-      	<effect>
-		<inherits-from>Effects/model-transparent</inherits-from>
-  <object-name>glass</object-name>
-	</effect>
- 
-	<animation>
-		<type>material</type>
-		<object-name>glass</object-name>
-
-		<transparency>
-			<alpha>0.2</alpha>
-		</transparency>
-	</animation>
- 
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>glass</object-name>
+    <object-name>reflectorglass</object-name>
+  </effect>
+    <effect>
+        <inherits-from>Effects/hud</inherits-from>
+    <object-name>reflectorglass</object-name>
+   <brightness>1.0</brightness>
+   <sample-res>0.006</sample-res>
+   <sample-far>2.5</sample-far>
+    </effect>
+  <animation>
+    <type>material</type>
+    <object-name>reflectorglass</object-name>
+    <transparency>
+      <alpha>0.4</alpha>
+    </transparency>
+  <specularity>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+  </specularity>
+  <shininess>128</shininess>
+  <emission>
+   <red>1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>controls/lighting/gunsight</factor-prop>
+  </emission>
+  </animation>
 </PropertyList>

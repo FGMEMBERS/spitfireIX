@@ -11,6 +11,28 @@ October 2007 Detlef Faber
 
  <sim>
   <description>Supermarine Spitfire Mk IX</description>
+        <previews>
+            <preview>
+                <type>exterior</type>
+                <path>Aircraft/spitfireIX/Splash/Splash-001.png</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Aircraft/spitfireIX/Splash/Splash-002.png</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Aircraft/spitfireIX/Splash/Splash-003.png</path>
+                <splash type="bool">true</splash>
+            </preview>
+	    <preview>
+                <type>exterior</type>
+                <path>Aircraft/spitfireIX/Splash/Splash-004.png</path>
+                <splash type="bool">true</splash>
+            </preview>
+        </previews>
   <author>Detlef Faber</author>
   <rating>
     <FDM type="int">4</FDM>
@@ -58,13 +80,12 @@ October 2007 Detlef Faber
       <fail-type type= "int">0</fail-type>
   </failure-manager>
   <help include="Include/help.xml"/>
-  <startup>
-    <splash-texture>Aircraft/spitfireIX/spit9-splash1.png</splash-texture>
-  </startup>
+
   <systems>
-    <autopilot>
+   <property-rule n="100">
+      <name>Control Heaviness filter</name>
       <path>Aircraft/spitfireIX/Systems/control-filters.xml</path>
-    </autopilot>
+    </property-rule>
    <electrical>
     <path>Aircraft/Generic/generic-electrical.xml</path>
    </electrical>
@@ -88,7 +109,9 @@ October 2007 Detlef Faber
   </panel>
 
   <model>
+   <variant type="int">0</variant> <!-- determines wingtip -->
    <path>Aircraft/spitfireIX/Models/SpitfireIX.xml</path>
+   <fallback-model-index type="int">404</fallback-model-index>
    <crew>
       <pilot>
         <pose include="Include/pilot-pose.xml"/>
@@ -99,10 +122,18 @@ October 2007 Detlef Faber
    <livery>
      <bare-alu type="bool">false</bare-alu>
      <file/>
-     <amb_correction type="string">0.1</amb_correction>
+     <amb_correction type="string">0.15</amb_correction>
      <refl_correction type="string">-0.7</refl_correction>
+     <material>
+       <specular>
+         <blue type="float">0.6</blue>
+         <green type="float">0.5</green>
+         <red type="float">0.5</red>
+       </specular>
+       <shininess type="float">92</shininess>
+     </material>
    </livery>
-  </model> 
+  </model>
 	
   <view n="0">
    <internal archive="y">true</internal>
@@ -226,11 +257,6 @@ October 2007 Detlef Faber
   	</menu>
   </default>
 	</menubar>
-	<multiplay>
-  <generic>
-  	<string/>
-  </generic>
-	</multiplay>
 
  <weight n="0">
     <name>left Wing</name>
@@ -306,7 +332,7 @@ October 2007 Detlef Faber
     <engines>
       <engine n="0">
         <magnetos>0</magnetos>
-        <boost type="double">0.45</boost>
+        <boost type="double">0.65</boost>
         <blower type="int">0</blower>
         <primer type="double">0.0</primer>
         <primer-pressed type="bool">0.0</primer-pressed>
@@ -356,6 +382,9 @@ October 2007 Detlef Faber
       <config type="bool" userarchive="y">0</config>
       <idling type="bool" userarchive="y">1</idling>
     </startup>
+    <lighting>
+      <gunsight type="double">1.0</gunsight>
+    </lighting>
  </controls>
  <consumables>
   <fuel>
@@ -460,12 +489,17 @@ October 2007 Detlef Faber
     <weapons>
       <file>Aircraft/spitfireIX/Nasal/weapons.nas</file>
     </weapons>
+    <gunsight>
+      <file>Aircraft/spitfireIX/Models/Instruments/gunsight-mk2/gunsight.nas</file>
+    </gunsight>
+<!--
     <hitcheck>
       <file>Aircraft/spitfireIX/Nasal/hitcheck.nas</file>
     </hitcheck>
     <pilot>
       <file>Aircraft/Generic/Human/Nasal/pilot-movment.nas</file>
     </pilot>
+-->
   </nasal>
 
 </PropertyList>
